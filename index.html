@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مركز الحرية للطب النفسي وعلاج الإدمان | أفضل مركز علاج إدمان في مصر</title>
+<meta name="description" content="مركز الحرية للطب النفسي وعلاج الإدمان في وادي النطرون. خبرة 35+ سنة، فريق طبي متخصص، سرية تامة. تواصل معنا: 201211117075">
+<meta name="keywords" content="مركز علاج إدمان مصر, علاج الإدمان, مركز الحرية, طب نفسي, وادي النطرون, علاج المخدرات">
+<meta name="author" content="مركز الحرية للطب النفسي وعلاج الإدمان">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="مركز الحرية للطب النفسي وعلاج الإدمان">
+<meta property="og:description" content="أفضل مركز متخصص لعلاج الإدمان والصحة النفسية في مصر منذ 1989">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_EG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="#">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Language Overlay -->
+<div class="lang-overlay" id="langOverlay"></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عارض الصور">
+  <button class="lightbox-close" id="lightboxClose" aria-label="إغلاق">✕</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="السابق">&#8249;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="صورة المركز">
+  <button class="lightbox-next" id="lightboxNext" aria-label="التالي">&#8250;</button>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="navigation">
+  <a href="#home"     onclick="closeMobile()" data-ar="الرئيسية"    data-en="Home">الرئيسية</a>
+  <a href="#about"    onclick="closeMobile()" data-ar="من نحن"       data-en="About">من نحن</a>
+  <a href="#why"      onclick="closeMobile()" data-ar="لماذا نحن"    data-en="Why Us">لماذا نحن</a>
+  <a href="#services" onclick="closeMobile()" data-ar="الخدمات"      data-en="Services">الخدمات</a>
+  <a href="#gallery"  onclick="closeMobile()" data-ar="معرض الصور"   data-en="Gallery">معرض الصور</a>
+  <a href="#contact"  onclick="closeMobile()" data-ar="تواصل معنا"   data-en="Contact">تواصل معنا</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="القائمة الرئيسية">
+
+  <!-- Logo -->
+  <a class="nav-logo" href="#home" aria-label="مركز الحرية - الصفحة الرئيسية">
+    <img src="images/logo.png" class="logo-img" alt="شعار مركز الحرية" onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'">
+    <div class="logo-fallback" id="logoFallback">
+      <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" width="48" height="28">
+        <path d="M10 45 Q25 20 50 22 Q70 24 85 15" stroke="#0077b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M10 48 Q30 50 50 45 Q70 40 90 45" stroke="#0096c7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="74" cy="18" r="5" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+        <circle cx="76" cy="16" r="2" fill="#c9a84c"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <div class="logo-name">FREEDOM</div>
+      <div class="logo-sub" id="logoSub">مركز الحرية لعلاج الإدمان</div>
+    </div>
+  </a>
+
+  <!-- Desktop Menu -->
+  <ul class="nav-menu" role="list">
+    <li><a href="#home"     data-ar="الرئيسية"    data-en="Home">الرئيسية</a></li>
+    <li><a href="#about"    data-ar="من نحن"       data-en="About">من نحن</a></li>
+    <li><a href="#why"      data-ar="لماذا نحن"    data-en="Why Us">لماذا نحن</a></li>
+    <li><a href="#services" data-ar="الخدمات"      data-en="Services">الخدمات</a></li>
+    <li><a href="#gallery"  data-ar="معرض الصور"   data-en="Gallery">معرض الصور</a></li>
+    <li><a href="#contact"  data-ar="تواصل معنا"   data-en="Contact">تواصل معنا</a></li>
+  </ul>
+
+  <!-- Right controls -->
+  <div class="nav-controls">
+    <button class="lang-toggle" onclick="toggleLang()" aria-label="تغيير اللغة">
+      <span class="lang-flag" id="langFlag">🇬🇧</span>
+      <span id="langLabel">EN</span>
+    </button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="القائمة" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section id="home" aria-label="Hero">
+  <div class="hero-bg">
+    <div class="hero-shape shape-1"></div>
+    <div class="hero-shape shape-2"></div>
+    <div class="hero-shape shape-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" id="heroBadge">منذ 1989 — الرائد في علاج الإدمان</div>
+    <h1 class="hero-title">
+      <span id="heroTitle">أفضل مركز لعلاج الإدمان في مصر</span><br>
+      <span class="hero-sub-title gradient-text" id="heroSubTitle">بسرية تامة واحترافية عالية</span>
+    </h1>
+    <p class="hero-subtitle" id="heroSubtitle">مركز الحرية وادي النطرون — نقدم رعاية طبية متكاملة وبرامج علاج الإدمان والصحة النفسية بأعلى معايير الخصوصية والاحترافية</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/201211117075" class="btn-primary" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span id="btnWAText">واتساب</span>
+      </a>
+      <a href="tel:+201211117075" class="btn-secondary" aria-label="اتصل بنا الآن">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span id="btnCallText">اتصل الآن</span>
+      </a>
+    </div>
+    <!-- Stats -->
+    <div class="hero-stats">
+      <div class="stat-item reveal">
+        <div class="stat-num" id="sn1">+35</div>
+        <div class="stat-label" id="stat1">سنة خبرة</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num" id="sn2">+5000</div>
+        <div class="stat-label" id="stat2">حالة تعافي ناجحة</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num" id="sn3">98%</div>
+        <div class="stat-label" id="stat3">نسبة رضا العملاء</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num" id="sn4">24/7</div>
+        <div class="stat-label" id="stat4">إشراف طبي متواصل</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     TICKER
+════════════════════════════════════════════ -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <div class="ticker-item"><div class="ticker-dot"></div><span>سرية تامة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>إشراف طبي متخصص</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>برامج علاج حديثة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>خبرة أكثر من 35 سنة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>بيئة علاجية آمنة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>فريق متعدد التخصصات</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>نسبة تعافي عالية</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>متابعة مستمرة بعد العلاج</span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="ticker-item"><div class="ticker-dot"></div><span>سرية تامة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>إشراف طبي متخصص</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>برامج علاج حديثة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>خبرة أكثر من 35 سنة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>بيئة علاجية آمنة</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>فريق متعدد التخصصات</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>نسبة تعافي عالية</span></div>
+    <div class="ticker-item"><div class="ticker-dot"></div><span>متابعة مستمرة بعد العلاج</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ABOUT SECTION
+════════════════════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner reveal">
+      <div class="about-text">
+        <span class="section-label" id="aboutLabel">من نحن</span>
+        <h2 class="section-title" id="aboutTitle">مركز الحرية — رائد التعافي في مصر</h2>
+        <div class="section-line"></div>
+        <p id="aboutP1">تأسس مركز الحرية للطب النفسي وعلاج الإدمان عام 1989 ليكون أول مركز متخصص في مجال علاج الإدمان والحالات النفسية في مصر. على مدار أكثر من ثلاثة عقود، أثبتنا كفاءتنا وتميزنا في تقديم خدمات علاجية عالية الجودة.</p>
+        <p id="aboutP2">يقع مركزنا في وادي النطرون، حيث توفر البيئة الهادئة والطبيعة الخلابة أفضل الظروف للتعافي. نؤمن بأن التعافي رحلة شاملة تحتاج إلى رعاية طبية ونفسية واجتماعية متكاملة.</p>
+        <p id="aboutP3">فريقنا المتخصص يضم أطباء نفسيين وإدمان، أخصائيي علاج نفسي، معالجين جماعيين، ومتخصصي التأهيل. نعمل معاً لنضمن لكل مريض رحلة تعافي آمنة وناجحة.</p>
+        <a href="#contact" class="btn-outline-primary">تواصل معنا</a>
+      </div>
+      <div class="about-img">
+        <img src="images/466515742_906781558184893_3429756715380046644_n.jpg"
+             alt="مركز الحرية للطب النفسي وعلاج الإدمان"
+             loading="lazy"
+             onerror="this.src='images/center1.jpg'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     WHY US
+════════════════════════════════════════════ -->
+<section id="why" class="section-alt">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label" id="whyLabel">لماذا تختارنا</span>
+      <h2 class="section-title" id="whyTitle">الخبرة والجودة في خدمتك</h2>
+      <div class="section-line center-line"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-feat reveal">
+        <div class="feat-icon">🎯</div>
+        <div class="feat-text">
+          <h4 id="wf1t">أعلى نسبة تعافي في مصر</h4>
+          <p id="wf1d">سجلنا أعلى نسب تعافي موثقة بين مراكز علاج الإدمان في جمهورية مصر العربية</p>
+        </div>
+      </div>
+      <div class="why-feat reveal reveal-delay-1">
+        <div class="feat-icon">👨‍⚕️</div>
+        <div class="feat-text">
+          <h4 id="wf2t">فريق طبي متخصص</h4>
+          <p id="wf2d">أطباء وأخصائيون نفسيون ومعالجون معتمدون ذوو خبرة عالية في مجال الإدمان</p>
+        </div>
+      </div>
+      <div class="why-feat reveal reveal-delay-2">
+        <div class="feat-icon">🌍</div>
+        <div class="feat-text">
+          <h4 id="wf3t">بيئة علاجية فريدة</h4>
+          <p id="wf3d">موقع متميز في وادي النطرون بعيداً عن ضغوط المدينة وسط طبيعة هادئة</p>
+        </div>
+      </div>
+      <div class="why-feat reveal reveal-delay-3">
+        <div class="feat-icon">📋</div>
+        <div class="feat-text">
+          <h4 id="wf4t">برامج علاجية مخصصة</h4>
+          <p id="wf4d">كل مريض يحظى ببرنامج علاجي شخصي يناسب حالته ويلبي احتياجاته الفردية</p>
+        </div>
+      </div>
+      <div class="why-feat reveal">
+        <div class="feat-icon">🔒</div>
+        <div class="feat-text">
+          <h4>خصوصية مطلقة</h4>
+          <p>نضمن سرية تامة لجميع مرضانا وذويهم طوال فترة العلاج وما بعدها</p>
+        </div>
+      </div>
+      <div class="why-feat reveal reveal-delay-1">
+        <div class="feat-icon">⏰</div>
+        <div class="feat-text">
+          <h4>إشراف طبي 24/7</h4>
+          <p>فريق طبي متاح على مدار الساعة لمتابعة المرضى وتقديم الرعاية اللازمة</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label" id="servLabel">خدماتنا المتخصصة</span>
+      <h2 class="section-title" id="servTitle">برامج العلاج والرعاية</h2>
+      <div class="section-line center-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">🏥</div>
+        <h3 class="service-title" id="s1t">علاج الإدمان</h3>
+        <p class="service-desc" id="s1d">برامج علاجية متكاملة لجميع أنواع الإدمان بأحدث الأساليب الطبية والنفسية تحت إشراف متخصصين.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🧠</div>
+        <h3 class="service-title" id="s2t">الصحة النفسية</h3>
+        <p class="service-desc" id="s2d">علاج الاضطرابات النفسية والاكتئاب والقلق وغيرها من الحالات بأفضل المعايير العلمية.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🌿</div>
+        <h3 class="service-title" id="s3t">إزالة السموم</h3>
+        <p class="service-desc" id="s3d">مرحلة إزالة السموم تحت إشراف طبي مستمر وبيئة آمنة ومريحة لضمان أقصى درجات السلامة.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">👨‍👩‍👧</div>
+        <h3 class="service-title" id="s4t">العلاج الأسري</h3>
+        <p class="service-desc" id="s4d">برامج متخصصة تشمل الأسرة في رحلة التعافي لضمان دعم اجتماعي قوي ومستدام.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">🏃</div>
+        <h3 class="service-title" id="s5t">التأهيل البدني</h3>
+        <p class="service-desc" id="s5d">أنشطة رياضية وترفيهية متنوعة لإعادة بناء الجسم والروح خلال فترة التعافي.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🔒</div>
+        <h3 class="service-title" id="s6t">سرية تامة</h3>
+        <p class="service-desc" id="s6d">نضمن خصوصية مطلقة لجميع مرضانا وذويهم — بيانات المريض في أمان تام ولا يطلع عليها أحد.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CENTER GALLERY
+════════════════════════════════════════════ -->
+<section id="gallery" class="section-alt">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label" id="gallLabel">معرض المركز</span>
+      <h2 class="section-title" id="gallTitle">شاهد مرافقنا المتكاملة</h2>
+      <div class="section-line center-line"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-item-large" onclick="openLightbox(0)" role="button" tabindex="0" aria-label="فتح الصورة">
+        <img src="images/481208565_982530583943323_2070410701486645143_n.jpg" alt="مبنى مركز الحرية" loading="lazy" onerror="this.src='images/center1.jpg'">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(1)" role="button" tabindex="0" aria-label="فتح الصورة">
+        <img src="images/481309693_982530547276660_3909875205002575542_n.jpg" alt="مرافق المركز" loading="lazy" onerror="this.src='images/center2.jpg'">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(2)" role="button" tabindex="0" aria-label="فتح الصورة">
+        <img src="images/481267441_982530577276657_5600000461170856558_n.jpg" alt="غرف المركز" loading="lazy" onerror="this.src='images/center3.jpg'">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(3)" role="button" tabindex="0" aria-label="فتح الصورة">
+        <img src="images/481494145_982530513943330_3349579923987577908_n.jpg" alt="حديقة المركز" loading="lazy" onerror="this.src='images/center4.jpg'">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(4)" role="button" tabindex="0" aria-label="فتح الصورة">
+        <img src="images/481267426_982530593943322_1928659961414372851_n.jpg" alt="قاعة المركز" loading="lazy" onerror="this.src='images/center5.jpg'">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox(11)" role="button" tabindex="0" aria-label="فتح الصورة">
+        <img src="images/481948360_982530597276655_2503726545194271369_n.jpg" alt="مرفق المركز" loading="lazy" onerror="this.src='images/center6.jpg'">
+        <div class="gallery-overlay"><div class="gallery-zoom">🔍</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ACTIVITIES GALLERY
+════════════════════════════════════════════ -->
+<section id="activities">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label" id="actLabel">الأنشطة والفعاليات</span>
+      <h2 class="section-title" id="actTitle">حياة متوازنة داخل المركز</h2>
+      <div class="section-line center-line"></div>
+    </div>
+    <div class="activities-grid">
+      <div class="activity-item reveal" onclick="openLightbox(5)" role="button" tabindex="0">
+        <img src="images/481070746_982532030609845_5264102730663406475_n.jpg" alt="أنشطة رياضية" loading="lazy" onerror="this.src='images/activity1.jpg'">
+        <div class="activity-tag" id="act1Tag">رياضة</div>
+      </div>
+      <div class="activity-item reveal reveal-delay-1" onclick="openLightbox(6)" role="button" tabindex="0">
+        <img src="images/481203698_982532077276507_3179570028505893609_n.jpg" alt="تمارين بدنية" loading="lazy" onerror="this.src='images/activity2.jpg'">
+        <div class="activity-tag" id="act2Tag">تمارين</div>
+      </div>
+      <div class="activity-item reveal reveal-delay-2" onclick="openLightbox(7)" role="button" tabindex="0">
+        <img src="images/481206569_982531977276517_9107347447206093160_n.jpg" alt="فريق العمل" loading="lazy" onerror="this.src='images/activity3.jpg'">
+        <div class="activity-tag" id="act3Tag">فريق</div>
+      </div>
+      <div class="activity-item reveal" onclick="openLightbox(8)" role="button" tabindex="0">
+        <img src="images/481217637_982532167276498_5541788592528585080_n.jpg" alt="أنشطة ترفيهية" loading="lazy" onerror="this.src='images/activity4.jpg'">
+        <div class="activity-tag" id="act4Tag">ترفيه</div>
+      </div>
+      <div class="activity-item reveal reveal-delay-1" onclick="openLightbox(9)" role="button" tabindex="0">
+        <img src="images/481279469_982532163943165_5014427139886589180_n.jpg" alt="جلسات جماعية" loading="lazy" onerror="this.src='images/activity5.jpg'">
+        <div class="activity-tag" id="act5Tag">مجموعة</div>
+      </div>
+      <div class="activity-item reveal reveal-delay-2" onclick="openLightbox(10)" role="button" tabindex="0">
+        <img src="images/481665760_982532020609846_2043430363508349158_n.jpg" alt="جلسات علاجية" loading="lazy" onerror="this.src='images/activity6.jpg'">
+        <div class="activity-tag" id="act6Tag">جلسات</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════ -->
+<section id="contact" class="section-alt">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="section-label" id="contLabel">تواصل معنا</span>
+      <h2 class="section-title" id="contTitle">نحن هنا لمساعدتك</h2>
+      <div class="section-line center-line"></div>
+    </div>
+    <div class="contact-grid">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <a href="tel:+201211117075" class="contact-card reveal">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-text">
+            <h4 id="cc1t">اتصل بنا</h4>
+            <p>012 1111 7075</p>
+          </div>
+        </a>
+        <a href="https://wa.me/201211117075" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-1">
+          <div class="contact-card-icon">💬</div>
+          <div class="contact-card-text">
+            <h4 id="cc2t">واتساب</h4>
+            <p>012 1111 7075</p>
+          </div>
+        </a>
+        <div class="contact-card reveal reveal-delay-2">
+          <div class="contact-card-icon">📍</div>
+          <div class="contact-card-text">
+            <h4 id="cc3t">الموقع</h4>
+            <p id="cc3p">وادي النطرون، محافظة البحيرة، مصر</p>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/center.el7oria.drug.addiction" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-3">
+          <div class="contact-card-icon">📷</div>
+          <div class="contact-card-text">
+            <h4>Instagram</h4>
+            <p>center.el7oria.drug.addiction</p>
+          </div>
+        </a>
+      </div>
+      <!-- Contact Form -->
+      <div class="contact-form-wrap reveal">
+        <h3 id="formTitle">أرسل رسالتك</h3>
+        <div class="form-group">
+          <label for="fi1" id="fl1">الاسم الكامل</label>
+          <input type="text" id="fi1" placeholder="أدخل اسمك" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label for="fi2" id="fl2">رقم الهاتف</label>
+          <input type="tel" id="fi2" placeholder="01x xxxx xxxx" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="fi3" id="fl3">الرسالة</label>
+          <textarea id="fi3" placeholder="كيف يمكننا مساعدتك؟" rows="4"></textarea>
+        </div>
+        <button type="button" class="form-submit" onclick="submitForm()" id="submitBtn">إرسال الرسالة</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-row">
+        <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg" width="44" height="26">
+          <path d="M10 45 Q25 20 50 22 Q70 24 85 15" stroke="#0096c7" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M10 48 Q30 50 50 45 Q70 40 90 45" stroke="#0096c7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="74" cy="18" r="5" fill="none" stroke="#c9a84c" stroke-width="2.5"/>
+          <circle cx="76" cy="16" r="2" fill="#c9a84c"/>
+        </svg>
+        <span class="footer-name">FREEDOM</span>
+      </div>
+      <p class="footer-tagline">مركز الحرية للطب النفسي وعلاج الإدمان</p>
+    </div>
+    <nav class="footer-links" aria-label="روابط التذييل">
+      <a href="#home"     data-ar="الرئيسية"   data-en="Home">الرئيسية</a>
+      <a href="#about"    data-ar="من نحن"      data-en="About">من نحن</a>
+      <a href="#services" data-ar="الخدمات"     data-en="Services">الخدمات</a>
+      <a href="#gallery"  data-ar="معرض الصور"  data-en="Gallery">معرض الصور</a>
+      <a href="#contact"  data-ar="تواصل معنا"  data-en="Contact">تواصل معنا</a>
+    </nav>
+    <p class="footer-copy">© 2025 <strong>FREEDOM</strong> — مركز الحرية لعلاج الإدمان. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/201211117075" class="floating-wa" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="white" width="30" height="30">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span class="wa-tooltip">تواصل الآن</span>
+</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
