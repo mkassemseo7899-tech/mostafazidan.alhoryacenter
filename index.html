@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="مركز الحرية لعلاج الإدمان - أكبر نسبة تعافي في مصر. رعاية طبية وتأهيل نفسي في بيئة علاجية راقية بوادي النطرون.">
     <title>مركز الحرية لعلاج الإدمان | وادي النطرون</title>
     <!-- استدعاء خط كايرو -->
@@ -23,64 +23,63 @@
             --transition: all 0.3s ease-in-out;
         }
 
-        /* الإعدادات العامة */
+        /* الإعدادات العامة وإصلاح مشكلة الموبايل */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; line-height: 1.7; }
+        html, body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; width: 100%; position: relative; line-height: 1.7; }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; transition: var(--transition); }
 
         /* شريط التنقل (Navbar) */
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 10px 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
-        .nav-logo img { height: 60px; border-radius: 8px; mix-blend-mode: multiply; }
+        .nav-logo img { height: 60px; border-radius: 8px; object-fit: contain; }
         .nav-links { display: flex; gap: 30px; list-style: none; }
         .nav-links a { color: var(--navy); font-weight: 700; font-size: 15px; }
         .nav-links a:hover { color: var(--sky); }
         .nav-cta { background: linear-gradient(135deg, var(--sky), var(--blue)); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 4px 15px rgba(26,159,212,0.3); }
         .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,159,212,0.5); }
 
-        /* القسم الرئيسي (Hero) - التعديل الجديد */
+        /* القسم الرئيسي (Hero) بالخلفية الجديدة */
         .hero { 
-            height: 100vh; 
+            min-height: 100vh; 
             position: relative; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             text-align: center; 
-            /* وضع صورة أكبر نسبة تعافي كخلفية مع طبقة كحلي شفافة فوقها */
-            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.90)), url('activity7.webp.jpg') center/cover no-repeat; 
+            /* تم وضع صورة أكبر نسبة تعافي كخلفية مع طبقة كحلي شفافة بنسبة 85% */
+            background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('activity7.webp.jpg') center/cover no-repeat; 
             padding-top: 80px; 
         }
-        .hero-content { position: relative; z-index: 2; padding: 0 20px; display: flex; flex-direction: column; align-items: center; }
-        /* تكبير اللوجو الأبيض */
-        .hero-logo { width: 260px; margin-bottom: 20px; }
-        .hero h1 { font-size: clamp(30px, 5vw, 60px); font-weight: 900; color: var(--white); line-height: 1.3; margin-bottom: 15px; }
+        .hero-content { position: relative; z-index: 2; padding: 0 20px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .hero-logo { width: 220px; max-width: 80%; margin-bottom: 25px; object-fit: contain; }
+        .hero h1 { font-size: clamp(28px, 5vw, 60px); font-weight: 900; color: var(--white); line-height: 1.3; margin-bottom: 15px; }
         .hero h1 span { color: var(--sky); }
-        .hero p { color: rgba(255,255,255,0.9); font-size: 19px; margin-bottom: 40px; max-width: 650px; }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-        .btn-primary, .btn-outline { padding: 15px 40px; border-radius: 10px; font-weight: 700; font-size: 16px; transition: var(--transition); }
+        .hero p { color: rgba(255,255,255,0.9); font-size: 18px; margin-bottom: 40px; max-width: 650px; }
+        .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary, .btn-outline { padding: 12px 30px; border-radius: 10px; font-weight: 700; font-size: 16px; transition: var(--transition); text-align: center; }
         .btn-primary { background: var(--sky); color: var(--white); box-shadow: 0 10px 25px rgba(26,159,212,0.4); }
         .btn-primary:hover { background: var(--blue); transform: translateY(-3px); }
-        .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: var(--white); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: var(--white); direction: ltr; }
         .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
 
         /* التصميم المشترك للأقسام */
-        section { padding: 90px 5%; }
+        section { padding: 80px 5%; overflow: hidden; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-tag { display: inline-block; background: var(--light); color: var(--sky); padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 700; margin-bottom: 15px; }
-        .section-header h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 900; color: var(--navy); margin-bottom: 15px; }
+        .section-header h2 { font-size: clamp(26px, 4vw, 40px); font-weight: 900; color: var(--navy); margin-bottom: 15px; }
         .section-header p { color: var(--gray); font-size: 16px; max-width: 700px; margin: auto; }
 
         /* قسم عن المركز */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1200px; margin: auto; align-items: center; }
-        .about-img-stack { position: relative; height: 400px; }
+        .about-img-stack { position: relative; height: 400px; width: 100%; }
         .about-img-main { position: absolute; right: 0; top: 0; width: 80%; height: 90%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
         .about-img-accent { position: absolute; left: 0; bottom: 0; width: 60%; height: 60%; object-fit: cover; border-radius: 20px; border: 8px solid var(--white); box-shadow: var(--shadow); }
         .feature-list { list-style: none; margin-top: 30px; }
         .feature-list li { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-weight: 700; color: var(--navy); font-size: 16px; }
-        .feature-list li::before { content: '✓'; width: 28px; height: 28px; background: var(--sky); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .feature-list li::before { content: '✓'; width: 28px; height: 28px; background: var(--sky); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 
-        /* شبكة الكروت (للخدمات والأنشطة والمرافق) */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        /* شبكة الكروت للخدمات والأنشطة */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
         
         /* كروت الخدمات */
         .service-card { background: var(--white); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow); border: 1px solid rgba(26,159,212,0.05); text-align: center; transition: var(--transition); }
@@ -103,36 +102,39 @@
         .approach-card:hover { background: rgba(26,159,212,0.2); transform: translateY(-5px); border-color: var(--sky); }
         .approach-num { font-size: 55px; font-weight: 900; color: var(--sky); opacity: 0.4; margin-bottom: 10px; line-height: 1; }
 
-        /* قسم التواصل الجديد */
-        .contact-wrapper { max-width: 1000px; margin: auto; background: var(--sky); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; padding: 60px 40px; color: var(--white); text-align: center; }
-        .contact-wrapper h3 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
-        .contact-wrapper p { font-size: 18px; margin-bottom: 40px; color: rgba(255,255,255,0.9); }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .contact-item { background: rgba(255,255,255,0.1); padding: 35px 20px; border-radius: 16px; transition: var(--transition); border: 1px solid rgba(255,255,255,0.2); }
+        /* قسم التواصل */
+        .contact-wrapper { max-width: 1000px; margin: auto; background: var(--sky); border-radius: 24px; box-shadow: var(--shadow); padding: 50px 30px; color: var(--white); text-align: center; }
+        .contact-wrapper h3 { font-size: 30px; font-weight: 900; margin-bottom: 15px; }
+        .contact-wrapper p { font-size: 16px; margin-bottom: 40px; color: rgba(255,255,255,0.9); }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .contact-item { background: rgba(255,255,255,0.1); padding: 30px 15px; border-radius: 16px; transition: var(--transition); border: 1px solid rgba(255,255,255,0.2); }
         .contact-item:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .contact-item-icon { width: 65px; height: 65px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--white); }
-        .contact-item strong { display: block; font-size: 20px; margin-bottom: 10px; }
-        .contact-item a, .contact-item span { color: var(--white); font-weight: 600; font-size: 16px; }
+        .contact-item-icon { width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--white); }
+        .contact-item strong { display: block; font-size: 18px; margin-bottom: 10px; }
+        .contact-item a, .contact-item span { color: var(--white); font-weight: 600; font-size: 15px; word-break: break-word; }
         .contact-item a:hover { color: var(--navy); }
-        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 5px; }
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
         .social-links a { width: 45px; height: 45px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
         .social-links a:hover { background: var(--white); color: var(--sky); transform: scale(1.1); }
 
         /* الفوتر وزر الواتساب */
-        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; }
-        .whatsapp { position: fixed; bottom: 30px; left: 30px; background: #25D366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 5px 20px rgba(37,211,102,0.4); animation: pulse 2s infinite; z-index: 999; transition: transform 0.3s; }
-        .whatsapp:hover { transform: scale(1.1); color: #fff;}
+        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 25px 20px; font-size: 14px; }
+        .whatsapp { position: fixed; bottom: 20px; left: 20px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 5px 20px rgba(37,211,102,0.4); animation: pulse 2s infinite; z-index: 999; transition: transform 0.3s; }
+        .whatsapp:hover { transform: scale(1.1); color: #fff; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
 
-        /* التجاوب مع الموبايل */
+        /* حل مشكلة الشاشة على الموبايل بشكل نهائي */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
+            .nav-logo img { height: 50px; }
             .nav-links { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
-            .about-img-stack { height: 300px; margin-bottom: 30px; }
-            section { padding: 60px 20px; }
-            .contact-wrapper { padding: 40px 20px; }
-            .hero-logo { width: 200px; }
+            section { padding: 60px 15px; }
+            .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
+            .about-img-stack { height: 300px; margin-bottom: 20px; }
+            .grid-3 { grid-template-columns: 1fr; } /* إجبار عرض عمود واحد للموبايل لمنع الخروج عن الشاشة */
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero-btns { flex-direction: column; width: 100%; padding: 0 20px; }
+            .hero-btns a { width: 100%; }
         }
     </style>
 </head>
@@ -153,10 +155,9 @@
     <a href="https://wa.me/+201211117075" class="nav-cta" target="_blank" rel="noopener noreferrer">احجز استشارتك</a>
 </nav>
 
-<!-- القسم الرئيسي -->
+<!-- القسم الرئيسي (تم التعديل كما طلبت) -->
 <section class="hero">
     <div class="hero-content" data-aos="fade-up">
-        <!-- اللوجو الأبيض بالحجم الكبير -->
         <img src="logo-white.webp.png" alt="شعار مركز الحرية أبيض" class="hero-logo" title="مركز الحرية">
         <h1>مركز <span>الحرية</span> لعلاج الإدمان</h1>
         <p>نمنحك الحياة من جديد — رعاية متكاملة وتأهيل نفسي في بيئة علاجية راقية وآمنة بوادي النطرون، مع تحقيق أعلى نسب التعافي في مصر.</p>
@@ -171,9 +172,8 @@
 <section id="about" class="about-section">
     <div class="about-grid">
         <div class="about-img-stack" data-aos="fade-left">
-            <!-- استخدام صور المبنى والخضرة هنا -->
-            <img class="about-img-main" src="about-main.webp.jpg" alt="مبنى مركز الحرية لعلاج الإدمان" title="واجهة مركز الحرية">
-            <img class="about-img-accent" src="about-accent.webp.jpg" alt="المساحات الخضراء أمام مركز الحرية" title="حدائق المركز">
+            <img class="about-img-main" src="about-main.webp.jpg" alt="مبنى مركز الحرية لعلاج الإدمان الخارجي" title="واجهة مركز الحرية">
+            <img class="about-img-accent" src="gallery1.webp_2.jpg" alt="المساحات الخضراء الشاسعة بالمركز" title="حدائق المركز">
         </div>
         <div class="about-text" data-aos="fade-right">
             <span class="section-tag">ملاذك الآمن</span>
@@ -220,7 +220,7 @@
     </div>
 </section>
 
-<!-- قسم المرافق والبنية التحتية -->
+<!-- قسم المرافق والبنية التحتية (تم تصحيح العناوين لتطابق الصور) -->
 <section id="facilities" class="about-section">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">مرافق المركز</span>
@@ -229,62 +229,62 @@
     </div>
     <div class="grid-3">
         <div class="gallery-card" data-aos="zoom-in">
-            <img src="activity8.webp.jpg" alt="غرف إقامة ذات طابع ريفي" title="غرف الإقامة">
+            <img src="gallery1.webp.jpg" alt="غرف إقامة مزدوجة بمركز الحرية" title="غرف الإقامة">
             <div class="gallery-overlay">
-                <h3>أجنحة إقامة ذات طابع هادئ</h3>
-                <p>غرف مصممة بطابع يبعث على الدفء والراحة النفسية.</p>
+                <h3>غرف إقامة مزدوجة</h3>
+                <p>إقامة فندقية مجهزة تلبي كافة احتياجات النزلاء.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
-            <img src="gallery1.webp.jpg" alt="غرف إقامة مزدوجة بمركز الحرية" title="غرف إقامة مزدوجة">
+            <img src="gallery2.webp.jpg" alt="أجنحة إقامة ذات طابع ريفي مريح" title="أجنحة الإقامة">
             <div class="gallery-overlay">
-                <h3>غرف إقامة مزدوجة مريحة</h3>
-                <p>إقامة فندقية تلبي كافة احتياجات النزلاء اليومية.</p>
+                <h3>أجنحة إقامة هادئة</h3>
+                <p>غرف مصممة بطابع يبعث على الدفء والراحة النفسية.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="gallery7.webp.jpg" alt="قاعة محاضرات وعلاج جماعي" title="قاعة الندوات">
+            <img src="gallery10.webp_2.jpg" alt="قاعة محاضرات مجهزة" title="قاعات التأهيل">
             <div class="gallery-overlay">
-                <h3>قاعات مجهزة للتأهيل النفسي</h3>
-                <p>مجهزة لعقد الجلسات النفسية وبرامج التوعية والمحاضرات.</p>
+                <h3>قاعات التأهيل والندوات</h3>
+                <p>مجهزة بالكامل لعقد الجلسات النفسية والمحاضرات العلاجية.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- قسم الأنشطة الرياضية والترفيهية -->
+<!-- قسم الأنشطة الرياضية والترفيهية (تم تصحيح العناوين) -->
 <section id="activities">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">تجديد النشاط</span>
         <h2>أنشطة رياضية وترفيهية يومية</h2>
-        <p>نؤمن بأن النشاط البدني والترفيه هما جزء لا يتجزأ من العلاج لتفريغ الطاقة السلبية وتجديد الروح.</p>
+        <p>النشاط البدني والترفيه هما جزء لا يتجزأ من العلاج لتفريغ الطاقة السلبية وتجديد الروح.</p>
     </div>
     <div class="grid-3">
         <div class="gallery-card" data-aos="fade-up">
-            <img src="activity7.webp_2.jpg" alt="رياضة الجري في الهواء الطلق" title="اللياقة البدنية">
+            <img src="activity9.webp.jpg" alt="ملاعب كرة القدم الخماسية" title="الملاعب الرياضية">
             <div class="gallery-overlay">
-                <h3>رياضة الجري في الهواء الطلق</h3>
-                <p>تمارين صباحية لتجديد الدورة الدموية.</p>
+                <h3>ملاعب رياضية مفتوحة</h3>
+                <p>لتعزيز روح المنافسة والعمل الجماعي بكرة القدم.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="activity9.webp.jpg" alt="ملاعب كرة قدم خماسية" title="الأنشطة الرياضية">
+            <img src="activity7.webp_2.jpg" alt="رياضة الجري في الهواء الطلق" title="اللياقة البدنية">
             <div class="gallery-overlay">
-                <h3>ملاعب كرة قدم خماسية</h3>
-                <p>لتعزيز روح المنافسة الإيجابية والعمل الجماعي.</p>
+                <h3>رياضة الجري واللياقة</h3>
+                <p>تمارين صباحية في الهواء الطلق لتجديد الدورة الدموية.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="gallery5.webp.jpg" alt="صالة ألعاب وأنشطة داخلية" title="صالة الألعاب">
+            <img src="gallery5.webp.jpg" alt="صالة ألعاب تنس طاولة" title="صالة الألعاب">
             <div class="gallery-overlay">
-                <h3>صالة ألعاب وأنشطة داخلية</h3>
-                <p>تنس طاولة وألعاب مسلية لقضاء أوقات الفراغ.</p>
+                <h3>أنشطة ترفيهية داخلية</h3>
+                <p>صالة ألعاب وتنس طاولة لقضاء أوقات ممتعة.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- قسم المجتمع الداعم والعائلة -->
+<!-- قسم المجتمع الداعم والعائلة (تم تصحيح العناوين) -->
 <section id="community" class="about-section">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">عائلة مركز الحرية</span>
@@ -293,25 +293,47 @@
     </div>
     <div class="grid-3">
         <div class="gallery-card" data-aos="zoom-in">
-            <img src="activity14.webp.jpg" alt="الأيام العائلية والترابط الأسري" title="اليوم العائلي">
+            <img src="activity14.webp.jpg" alt="يوم عائلي وتجمع للمتعافين" title="الأيام العائلية">
             <div class="gallery-overlay">
-                <h3>الأيام العائلية والترابط الأسري</h3>
-                <p>لتعزيز الدعم المعنوي وتقوية الروابط مع الأهل.</p>
+                <h3>الأيام العائلية المفتوحة</h3>
+                <p>لتعزيز الترابط الأسري والدعم المعنوي والاحتفال بالتعافي.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
-            <img src="activity12.webp.jpg" alt="جلسات العلاج الجماعي في الطبيعة" title="الدعم المتبادل">
+            <img src="activity12.webp.jpg" alt="جلسات العلاج الجماعي في دائرة" title="التلاحم والدعم">
             <div class="gallery-overlay">
-                <h3>جلسات العلاج الجماعي في الطبيعة</h3>
-                <p>جلسات تقارب لتعزيز الثقة بالنفس والمشاركة الوجدانية.</p>
+                <h3>جلسات العلاج الجماعي</h3>
+                <p>جلسات تقارب في الطبيعة لتعزيز الثقة بالنفس والمشاركة.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="activity13.webp.jpg" alt="فريق طبي ونفسي متخصص" title="التوجيه والنصح">
+            <img src="activity11.webp.jpg" alt="أنشطة تفاعلية وبناء الثقة" title="روح الفريق">
             <div class="gallery-overlay">
-                <h3>فريق طبي ونفسي متخصص</h3>
-                <p>إشراف وتوجيه مستمر من نخبة من الاستشاريين والأطباء.</p>
+                <h3>أنشطة تفاعلية وبناء الثقة</h3>
+                <p>ألعاب جماعية لتقوية روح الفريق والتواصل الإيجابي.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- قسم جمال الطبيعة (تم تصحيح العناوين) -->
+<section id="nature">
+    <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">صفاء ذهني</span>
+        <h2>مساحات خضراء وأجواء ساحرة للتأمل</h2>
+    </div>
+    <div class="grid-3">
+        <div class="gallery-card" data-aos="fade-up">
+            <img src="gallery3.webp.jpg" alt="حمام السباحة بمركز الحرية" title="حمام السباحة">
+            <div class="gallery-overlay"><h3>حمام سباحة مجهز للترفيه</h3></div>
+        </div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="gallery9.webp.jpg" alt="منظر الغروب بالمبنى" title="وقت الغروب">
+            <div class="gallery-overlay"><h3>مشهد الغروب يبعث على الهدوء</h3></div>
+        </div>
+        <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="gallery6.webp.jpg" alt="ممرات خارجية مزينة بلمسات فنية" title="ممرات المركز">
+            <div class="gallery-overlay"><h3>ممرات خارجية للتمشية والتأمل</h3></div>
         </div>
     </div>
 </section>
@@ -346,7 +368,7 @@
     </div>
 </section>
 
-<!-- قسم التواصل الجديد -->
+<!-- قسم التواصل بدون الفورم (تم التعديل كما طلبت) -->
 <section id="contact" class="about-section">
     <div class="contact-wrapper" data-aos="zoom-in">
         <h3>تواصل معنا الآن</h3>
