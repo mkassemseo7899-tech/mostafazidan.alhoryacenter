@@ -16,7 +16,7 @@
             --navy: #0a2540;
             --blue: #0d6efd;
             --sky: #1a9fd4;
-            --accent: #11999e; /* لون مميز للإضافات والشريط المتحرك */
+            --accent: #11999e;
             --light: #f8fbff;
             --white: #ffffff;
             --gray: #6c757d;
@@ -26,7 +26,7 @@
 
         /* الإعدادات العامة وإصلاح مشكلة الموبايل */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; width: 100%; line-height: 1.7; }
+        html, body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; width: 100%; line-height: 1.7; scroll-behavior: smooth; }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; transition: var(--transition); }
 
@@ -36,10 +36,54 @@
         .nav-links { display: flex; gap: 30px; list-style: none; }
         .nav-links a { color: var(--navy); font-weight: 700; font-size: 15px; }
         .nav-links a:hover { color: var(--sky); }
-        .nav-cta { background: linear-gradient(135deg, var(--sky), var(--blue)); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 4px 15px rgba(26,159,212,0.3); }
-        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,159,212,0.5); }
 
-        /* القسم الرئيسي (Hero) بالخلفية الكحلي */
+        /* ======== أزرار 3D (التعديل الجديد) ======== */
+        .nav-cta { 
+            background: var(--blue); 
+            color: var(--white); 
+            padding: 10px 25px; 
+            border-radius: 8px; 
+            font-weight: 700; 
+            font-size: 15px; 
+            box-shadow: 0 5px 0 #0a58ca, 0 10px 15px rgba(13,110,253,0.3); 
+            position: relative;
+        }
+        .nav-cta:hover { background: #0b5ed7; transform: translateY(-2px); box-shadow: 0 7px 0 #0a58ca, 0 12px 20px rgba(13,110,253,0.4); }
+        .nav-cta:active { transform: translateY(3px); box-shadow: 0 2px 0 #0a58ca, 0 4px 10px rgba(13,110,253,0.3); }
+
+        .btn-primary { 
+            background: var(--sky); 
+            color: var(--white); 
+            padding: 15px 35px; 
+            border-radius: 10px; 
+            font-weight: 700; 
+            font-size: 16px; 
+            text-align: center;
+            box-shadow: 0 6px 0 #1279a1, 0 10px 20px rgba(26,159,212,0.3);
+            border: none;
+            position: relative;
+        }
+        .btn-primary:hover { background: #1ab0eb; transform: translateY(-2px); box-shadow: 0 8px 0 #1279a1, 0 15px 25px rgba(26,159,212,0.4); }
+        .btn-primary:active { transform: translateY(4px); box-shadow: 0 2px 0 #1279a1, 0 4px 10px rgba(26,159,212,0.3); }
+
+        .btn-outline { 
+            border: 2px solid var(--white); 
+            color: var(--white); 
+            padding: 15px 35px; 
+            border-radius: 10px; 
+            font-weight: 700; 
+            font-size: 16px; 
+            direction: ltr; 
+            text-align: center;
+            background: transparent;
+            box-shadow: 0 5px 0 rgba(255,255,255,0.4);
+            position: relative;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); box-shadow: 0 7px 0 rgba(255,255,255,0.5); border-color: var(--white); }
+        .btn-outline:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(255,255,255,0.4); }
+        /* =========================================== */
+
+        /* القسم الرئيسي (Hero) */
         .hero { 
             display: grid; 
             grid-template-columns: 1fr 1fr; 
@@ -56,24 +100,37 @@
             align-items: center; 
             justify-content: center;
         }
-        .hero-logo { width: 380px; max-width: 90%; margin-bottom: 30px; object-fit: contain; }
+        
+        /* تأثير الحركة الديناميكي للوجو (التعديل الجديد) */
+        @keyframes floatLogo {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-logo { 
+            width: 450px; 
+            max-width: 90%; 
+            margin-bottom: 30px; 
+            object-fit: contain; 
+            background-color: var(--white); 
+            padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            animation: floatLogo 4s ease-in-out infinite; /* إضافة الحركة */
+        }
+        
         .hero h1 { font-size: clamp(26px, 4vw, 45px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 20px; }
         .hero h1 span { color: var(--sky); }
         .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;}
-        .btn-primary, .btn-outline { padding: 15px 35px; border-radius: 10px; font-weight: 700; font-size: 16px; transition: var(--transition); text-align: center; }
-        .btn-primary { background: var(--sky); color: var(--white); box-shadow: 0 10px 25px rgba(26,159,212,0.4); }
-        .btn-primary:hover { background: var(--blue); transform: translateY(-3px); }
-        .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: var(--white); direction: ltr; }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
-        
         .hero-image-box { height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px;}
         .hero-image-box img { width: 100%; height: 90%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
 
-        /* شريط الأخبار المتحرك (Ticker) */
+        /* شريط الأخبار المتحرك بلون أزرق الموقع (التعديل الجديد) */
         .ticker-wrapper {
             width: 100%;
             overflow: hidden;
-            background-color: var(--accent);
+            background-color: var(--blue); /* تغيير اللون للأزرق الصريح */
             color: var(--white);
             padding: 15px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -83,27 +140,10 @@
             white-space: nowrap;
             animation: scrollText 30s linear infinite;
         }
-        .ticker-track:hover {
-            animation-play-state: paused;
-            cursor: pointer;
-        }
-        .ticker-item {
-            display: inline-flex;
-            align-items: center;
-            font-size: 19px;
-            font-weight: 700;
-            padding-right: 20px;
-        }
-        .ticker-item span {
-            margin: 0 20px;
-            color: var(--navy);
-            font-size: 14px;
-            opacity: 0.6;
-        }
-        @keyframes scrollText {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+        .ticker-track:hover { animation-play-state: paused; cursor: pointer; }
+        .ticker-item { display: inline-flex; align-items: center; font-size: 19px; font-weight: 700; padding-right: 20px; }
+        .ticker-item span { margin: 0 20px; color: var(--navy); font-size: 14px; opacity: 0.6; }
+        @keyframes scrollText { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
         /* التصميم المشترك للأقسام */
         section { padding: 80px 5%; overflow: hidden; }
@@ -121,15 +161,13 @@
         .feature-list li { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-weight: 700; color: var(--navy); font-size: 16px; }
         .feature-list li::before { content: '✓'; width: 28px; height: 28px; background: var(--sky); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
 
-        /* شبكة الكروت (للخدمات والأنشطة والمرافق) */
+        /* شبكات الكروت */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
         
-        /* كروت الخدمات */
         .service-card { background: var(--white); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow); border: 1px solid rgba(26,159,212,0.05); text-align: center; transition: var(--transition); }
         .service-card:hover { transform: translateY(-10px); border-color: var(--sky); }
         .service-icon { width: 80px; height: 80px; border-radius: 20px; background: var(--light); color: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 35px; margin: 0 auto 20px; }
 
-        /* كروت الصور (المرافق والأنشطة) */
         .gallery-card { position: relative; overflow: hidden; border-radius: 20px; aspect-ratio: 4/3; box-shadow: var(--shadow); cursor: pointer; }
         .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .gallery-card:hover img { transform: scale(1.1); }
@@ -138,7 +176,21 @@
         .gallery-overlay h3 { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 5px; }
         .gallery-overlay p { color: rgba(255,255,255,0.9); font-size: 14px; }
 
-        /* قسم خطوات التعافي */
+        /* ======== قسم خطط الأسعار (القسم الجديد) ======== */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: auto; }
+        .pricing-card { background: var(--white); border-radius: 20px; padding: 40px 30px; text-align: center; box-shadow: var(--shadow); position: relative; border: 2px solid transparent; transition: var(--transition); }
+        .pricing-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .pricing-card.popular { border-color: var(--sky); transform: translateY(-15px); }
+        .pricing-card.popular:hover { transform: translateY(-20px); }
+        .popular-badge { background: var(--sky); color: var(--white); padding: 5px 20px; border-radius: 20px; font-size: 14px; font-weight: 700; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); }
+        .pricing-card h3 { font-size: 24px; color: var(--navy); margin-bottom: 10px; font-weight: 900;}
+        .pricing-price { font-size: 28px; font-weight: 900; color: var(--sky); margin-bottom: 25px; background: var(--light); padding: 10px; border-radius: 10px; }
+        .pricing-features { list-style: none; margin-bottom: 30px; text-align: right; }
+        .pricing-features li { padding: 12px 0; border-bottom: 1px solid var(--light); color: var(--gray); font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .pricing-features li svg { width: 22px; height: 22px; color: var(--sky); flex-shrink: 0; }
+        /* ================================================= */
+
+        /* قسم المنهجية (الخطوات) */
         .approach-section { background: var(--navy); color: var(--white); }
         .approach-section .section-header h2 { color: var(--white); }
         .approach-card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: var(--transition); }
@@ -173,14 +225,13 @@
             .nav-links { display: none; }
             .hero { grid-template-columns: 1fr; padding-top: 100px; }
             .hero-text-box { padding: 20px; }
-            .hero-logo { width: 280px; }
+            .hero-logo { width: 280px; padding: 15px; }
             .hero-image-box { padding: 0 20px 40px; }
             section { padding: 60px 20px; }
             .about-grid, .contact-wrapper { grid-template-columns: 1fr; }
             .about-img-stack { height: 300px; margin-bottom: 30px; }
-            .grid-3 { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .ticker-item { font-size: 16px; }
+            .pricing-card.popular { transform: translateY(0); border-color: var(--sky); }
+            .pricing-card.popular:hover { transform: translateY(-5px); }
         }
     </style>
 </head>
@@ -196,15 +247,19 @@
         <li><a href="#services">خدماتنا</a></li>
         <li><a href="#facilities">المرافق</a></li>
         <li><a href="#community">المجتمع والأنشطة</a></li>
+        <!-- تم إضافة رابط قسم الأسعار هنا -->
+        <li><a href="#pricing">أسعار برامجنا</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
     </ul>
     <a href="https://wa.me/+201211117075" class="nav-cta" target="_blank" rel="noopener noreferrer">احجز استشارتك</a>
 </nav>
 
-<!-- القسم الرئيسي (تم تعديل المسارات لإضافة /images) -->
+<!-- القسم الرئيسي -->
 <section class="hero">
     <div class="hero-text-box" data-aos="fade-left">
-        <img src="images/logo-white.png" alt="شعار مؤسسة الحرية الأبيض" class="hero-logo" title="مؤسسة الحرية">
+        <!-- اللوجو داخل المربع الأبيض مع تأثير حركي -->
+        <img src="images/logo.png" alt="شعار مؤسسة الحرية" class="hero-logo" title="مؤسسة الحرية">
+        
         <h1>مركز <span>الحرية</span> لعلاج الإدمان</h1>
         <div class="hero-btns">
             <a href="#contact" class="btn-primary">ابدأ رحلة التعافي الآن</a>
@@ -219,7 +274,6 @@
 <!-- شريط الأخبار المتحرك (Ticker) -->
 <div class="ticker-wrapper" dir="ltr">
     <div class="ticker-track">
-        <!-- المجموعة الأولى -->
         <div class="ticker-item" dir="rtl">
             مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> 
             أعلى نسب تعافي في مصر <span>✦</span> 
@@ -229,7 +283,6 @@
             إقامة فندقية متميزة <span>✦</span> 
             سرية تامة واحترافية <span>✦</span>
         </div>
-        <!-- المجموعة الثانية -->
         <div class="ticker-item" dir="rtl">
             مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> 
             أعلى نسب تعافي في مصر <span>✦</span> 
@@ -390,6 +443,56 @@
     </div>
 </section>
 
+<!-- قسم أسعار برامجنا (القسم الجديد المضاف) -->
+<section id="pricing" style="background-color: var(--light);">
+    <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">خطط الأسعار</span>
+        <h2>برامج علاجية تناسب احتياجاتك</h2>
+        <p>نوفر باقات متنوعة لضمان حصولك على الرعاية التي تستحقها بأسعار شفافة وبدون تكاليف خفية.</p>
+    </div>
+    <div class="pricing-grid">
+        <!-- الكارت الأول -->
+        <div class="pricing-card" data-aos="fade-up">
+            <h3>البرنامج التمهيدي</h3>
+            <div class="pricing-price">سحب السموم</div>
+            <ul class="pricing-features">
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> إقامة فندقية مريحة</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> إشراف طبي 24 ساعة</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> أدوية سحب سموم بدون ألم</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> مدة البرنامج 10 - 15 يوماً</li>
+            </ul>
+            <a href="https://wa.me/+201211117075" class="btn-primary" style="width: 100%; display: block;" target="_blank">استفسر عن السعر</a>
+        </div>
+        
+        <!-- الكارت الثاني (الأكثر طلباً) -->
+        <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="100">
+            <div class="popular-badge">الأكثر طلباً</div>
+            <h3>البرنامج الشامل</h3>
+            <div class="pricing-price">تعافي متكامل</div>
+            <ul class="pricing-features">
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> سحب السموم بالكامل</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> تأهيل نفسي وسلوكي عميق</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> جلسات علاج فردي وجماعي</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> رعاية لاحقة ومتابعة مستمرة</li>
+            </ul>
+            <a href="https://wa.me/+201211117075" class="btn-primary" style="width: 100%; display: block;" target="_blank">احجز البرنامج الآن</a>
+        </div>
+        
+        <!-- الكارت الثالث -->
+        <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+            <h3>برنامج VIP</h3>
+            <div class="pricing-price">رعاية خاصة</div>
+            <ul class="pricing-features">
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> جناح فندقي خاص (مفرد)</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> فريق طبي مخصص للنزيل</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> خصوصية وسرية فائقة 100%</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> خدمات ترفيهية ووجبات خاصة</li>
+            </ul>
+            <a href="https://wa.me/+201211117075" class="btn-primary" style="width: 100%; display: block;" target="_blank">تواصل لمعرفة التفاصيل</a>
+        </div>
+    </div>
+</section>
+
 <!-- قسم المنهجية (الخطوات) -->
 <section class="approach-section">
     <div class="section-header" data-aos="fade-up">
@@ -420,7 +523,7 @@
     </div>
 </section>
 
-<!-- قسم التواصل الجديد -->
+<!-- قسم التواصل -->
 <section id="contact" style="background-color: var(--light);">
     <div class="contact-wrapper" data-aos="zoom-in">
         <h3>تواصل معنا الآن</h3>
