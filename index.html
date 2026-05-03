@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="مركز الحرية لعلاج الإدمان - أكبر نسبة تعافي في مصر. رعاية طبية وتأهيل نفسي في بيئة علاجية راقية بوادي النطرون.">
     <title>مركز الحرية لعلاج الإدمان | وادي النطرون</title>
+    <!-- استدعاء خط كايرو -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- مكتبة الحركات -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -33,19 +35,18 @@
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; transition: var(--transition); }
 
-        /* شريط التنقل (Navbar) */
+        /* ======== شريط التنقل (Navbar) لنسخة الديسك توب ======== */
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 10px 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
         .nav-logo img { height: 60px; border-radius: 8px; object-fit: contain; }
         .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-        .nav-links a { color: var(--navy); font-weight: 700; font-size: 15px; transition: var(--transition); }
+        .nav-links a { color: var(--navy); font-weight: 700; font-size: 16px; transition: var(--transition); }
         .nav-links a:hover { color: var(--sky); }
         
-        /* زر قائمة الموبايل (Hamburger) */
         .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; }
         .menu-toggle span { display: block; width: 30px; height: 4px; background-color: var(--navy); border-radius: 2px; transition: var(--transition); }
 
         /* أزرار 3D العامة */
-        .nav-cta { background: var(--blue); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 5px 0 #0a58ca, 0 10px 15px rgba(13,110,253,0.3); position: relative; }
+        .nav-cta { background: var(--blue); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 5px 0 #0a58ca, 0 10px 15px rgba(13,110,253,0.3); position: relative; display: inline-block; }
         .nav-cta:hover { background: #0b5ed7; transform: translateY(-2px); box-shadow: 0 7px 0 #0a58ca, 0 12px 20px rgba(13,110,253,0.4); color: white;}
         .nav-cta:active { transform: translateY(3px); box-shadow: 0 2px 0 #0a58ca, 0 4px 10px rgba(13,110,253,0.3); }
 
@@ -64,17 +65,17 @@
         @keyframes floatLogo { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
         .hero-logo { width: 450px; max-width: 90%; margin-bottom: 30px; object-fit: contain; background-color: var(--white); padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: floatLogo 4s ease-in-out infinite; }
         
-        .hero h1 { font-size: clamp(26px, 4vw, 45px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 20px; }
+        .hero h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 20px; }
         .hero h1 span { color: var(--sky); }
         .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 20px;}
         .hero-image-box { height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px;}
         .hero-image-box img { width: 100%; height: 90%; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
 
-        /* شريط الأخبار المتحرك */
+        /* ======== شريط الأخبار المتحرك ======== */
         .ticker-wrapper { width: 100%; overflow: hidden; background-color: var(--blue); color: var(--white); padding: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .ticker-track { display: inline-flex; white-space: nowrap; animation: scrollText 30s linear infinite; }
         .ticker-track:hover { animation-play-state: paused; cursor: pointer; }
-        .ticker-item { display: inline-flex; align-items: center; font-size: 19px; font-weight: 700; padding-right: 20px; }
+        .ticker-item { display: inline-flex; align-items: center; font-size: 18px; font-weight: 700; padding-right: 20px; }
         .ticker-item span { margin: 0 20px; color: var(--navy); font-size: 14px; opacity: 0.6; }
         @keyframes scrollText { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
@@ -83,9 +84,9 @@
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-tag { display: inline-block; background: var(--light); color: var(--sky); padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 700; margin-bottom: 15px; }
         
-        /* عناوين الأقسام الـ 3D الملونة */
+        /* ======== عناوين الأقسام الـ 3D الملونة (تعمل على الكمبيوتر والموبايل) ======== */
         section .section-header h2 { 
-            font-size: clamp(30px, 5vw, 45px); 
+            font-size: clamp(32px, 5vw, 48px); 
             font-weight: 900; 
             margin-bottom: 15px; 
             text-shadow: 1px 1px 0px #cbd5e1, 2px 2px 0px #94a3b8, 3px 3px 0px #64748b, 4px 4px 5px rgba(0,0,0,0.2); 
@@ -99,7 +100,7 @@
         #pricing .section-header h2 { color: #7c3aed; }
         #contact .section-header h2 { color: #e11d48; }
 
-        .section-header p { color: var(--gray); font-size: 16px; max-width: 700px; margin: auto; font-weight: 600; }
+        .section-header p { color: var(--gray); font-size: 18px; max-width: 700px; margin: auto; font-weight: 600; }
 
         /* الشبكات والكروت */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; max-width: 1200px; margin: auto; align-items: center; }
@@ -123,7 +124,7 @@
         .gallery-overlay h3 { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 5px; }
         .gallery-overlay p { color: rgba(255,255,255,0.9); font-size: 14px; }
 
-        /* ======== قسم تفاصيل الأسعار الشامل ======== */
+        /* ======== قسم خطط الأسعار الشامل ======== */
         .pricing-phase { max-width: 1200px; margin: 0 auto 60px; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow); border-top: 5px solid var(--sky); }
         .pricing-phase h3 { font-size: 28px; color: var(--navy); margin-bottom: 15px; font-weight: 900; text-align: center;}
         .pricing-phase > p { text-align: center; color: var(--gray); margin-bottom: 30px; font-weight: 600; font-size: 16px; }
@@ -132,33 +133,34 @@
         .price-box { background: var(--light); border-radius: 15px; padding: 25px 20px; text-align: center; border: 1px solid rgba(0,0,0,0.05); transition: var(--transition); }
         .price-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-color: var(--sky); }
         .price-box h4 { color: var(--navy); font-size: 18px; margin-bottom: 10px; font-weight: 800; min-height: 50px; display: flex; align-items: center; justify-content: center;}
-        .price-box .amount { font-size: 26px; font-weight: 900; color: var(--sky); margin-bottom: 5px; }
+        .price-box .amount { font-size: 26px; font-weight: 900; color: var(--sky); margin-bottom: 5px; direction: ltr; }
         .price-box .period { font-size: 14px; color: var(--gray); font-weight: 600; }
         
         .pricing-category-title { font-size: 22px; color: var(--white); background: var(--navy); padding: 10px 20px; border-radius: 10px; margin: 40px 0 20px; display: inline-block; font-weight: 800;}
-        .medical-test-alert { background: rgba(234, 88, 12, 0.1); color: #ea580c; padding: 15px; border-radius: 10px; text-align: center; font-weight: 700; margin-top: 20px; border: 1px dashed #ea580c; }
+        .medical-test-alert { background: rgba(234, 88, 12, 0.1); color: #ea580c; padding: 20px; border-radius: 10px; text-align: center; font-weight: 700; margin-top: 20px; border: 2px dashed #ea580c; }
 
         /* المنهجية */
         .approach-section { background: var(--navy); color: var(--white); }
-        .approach-section .section-header h2 { color: var(--white); text-shadow: none; }
+        .approach-section .section-header h2 { color: var(--white); text-shadow: 1px 1px 0 #000, 2px 2px 0 #222; }
         .approach-card { background: rgba(255,255,255,0.05); border-radius: 20px; padding: 40px 30px; border: 1px solid rgba(255,255,255,0.1); text-align: center; transition: var(--transition); }
         .approach-card:hover { background: rgba(26,159,212,0.2); transform: translateY(-5px); border-color: var(--sky); }
         .approach-num { font-size: 55px; font-weight: 900; color: var(--sky); opacity: 0.4; margin-bottom: 10px; line-height: 1; }
 
-        /* قسم التواصل والأيقونات الـ 3D الديناميكية */
+        /* ======== قسم التواصل والأيقونات الـ 3D الديناميكية ======== */
         .contact-wrapper { max-width: 1000px; margin: auto; background: var(--light); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; padding: 60px 40px; text-align: center; border: 2px solid rgba(0,0,0,0.05); }
         .contact-wrapper p { font-size: 18px; margin-bottom: 40px; color: var(--gray); font-weight: 600; }
         
         @keyframes dynamicFloat { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
         
+        /* تصميم الأزرار الـ 3D لنسخة الديسك توب والموبايل */
         .social-btn-3d {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 70px; height: 70px; border-radius: 50%; color: var(--white);
+            width: 75px; height: 75px; border-radius: 50%; color: var(--white);
             margin: 0 15px; text-decoration: none;
             transition: all 0.2s ease;
             animation: dynamicFloat 3s ease-in-out infinite;
         }
-        .social-btn-3d svg { width: 35px; height: 35px; fill: currentColor; }
+        .social-btn-3d svg { width: 40px; height: 40px; fill: currentColor; }
         .social-btn-3d:active { transform: translateY(4px) !important; box-shadow: 0 2px 0px rgba(0,0,0,0.3) !important; animation: none;}
         
         .btn-wa { background-color: var(--wa-color); box-shadow: 0 6px 0 #1da851, 0 10px 15px rgba(37,211,102,0.4); }
@@ -174,24 +176,24 @@
         .btn-mail:hover { background-color: #f54a3b; box-shadow: 0 8px 0 #b33328, 0 15px 20px rgba(234,67,53,0.5); transform: translateY(-5px); animation: none;}
 
         /* الفوتر وزر الواتساب العائم */
-        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; font-size: 14px; }
+        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; font-size: 15px; }
         .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background: var(--wa-color); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 6px 0 #1da851, 0 10px 20px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.2s, box-shadow 0.2s; animation: dynamicFloat 2s ease-in-out infinite; }
         .whatsapp-float:hover { filter: brightness(1.1); transform: translateY(-5px); box-shadow: 0 8px 0 #1da851, 0 15px 25px rgba(37,211,102,0.5); animation: none;}
         .whatsapp-float:active { transform: translateY(4px); box-shadow: 0 2px 0 #1da851; }
 
-        /* ======== التجاوب مع الموبايل (حل مشكلة القائمة الجانبية المنسدلة) ======== */
+        /* ======== التجاوب مع الموبايل وإصلاح الناف بار ======== */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-logo img { height: 45px; }
             
-            /* تفعيل وإظهار زر القائمة المنسدلة */
+            /* تفعيل زر الموبايل الجانبي */
             .menu-toggle { display: flex; }
             
-            /* تصميم القائمة الجانبية (Sidebar) للموبايل */
+            /* تصميم القائمة الجانبية المنزلقة (Off-canvas) */
             .nav-links { 
                 position: fixed; 
                 top: 0; 
-                right: -100%; /* مخفية بالخارج */
+                right: -100%; 
                 width: 280px; 
                 height: 100vh; 
                 background: var(--white); 
@@ -201,9 +203,9 @@
                 box-shadow: -5px 0 20px rgba(0,0,0,0.15); 
                 transition: right 0.4s ease-in-out;
             }
-            .nav-links.active { right: 0; } /* تظهر عند الضغط */
+            .nav-links.active { right: 0; } 
             .nav-links li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05); }
-            /* إزالة أي حدود أو ألوان قديمة من الروابط لحل مشكلة الموبايل */
+            /* إزالة أي إطارات ملونة أو 3D من روابط الموبايل لتبدو أنيقة */
             .nav-links a { 
                 display: block; 
                 padding: 15px 10px; 
@@ -215,37 +217,39 @@
                 text-align: right; 
                 width: 100%;
             }
-            .nav-cta { display: none; } /* إخفاء زر الحجز من الناف بار في الموبايل */
+            .nav-cta { display: none; } 
             
-            /* أنيميشن لزر الموبايل (علامة X) */
+            /* تأثير زر القائمة */
             .menu-toggle.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
             .menu-toggle.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-            /* ضبط أحجام باقي الأقسام للموبايل */
+            /* ضبط أحجام الموبايل */
             .hero { grid-template-columns: 1fr; padding-top: 100px; }
             .hero-text-box { padding: 20px; }
             .hero-logo { width: 280px; padding: 15px; }
             .hero-image-box { padding: 0 20px 40px; }
             section { padding: 60px 20px; }
-            .section-header h2 { font-size: 30px; }
+            section .section-header h2 { font-size: 32px; }
             .about-grid { grid-template-columns: 1fr; }
             .about-img-stack { height: 300px; margin-bottom: 30px; }
             .grid-3 { grid-template-columns: 1fr; }
             .pricing-phase { padding: 20px; }
             .pricing-category-title { font-size: 18px; }
-            .social-btn-3d { width: 50px; height: 50px; margin: 10px 5px; }
-            .social-btn-3d svg { width: 25px; height: 25px; }
+            .social-btn-3d { width: 55px; height: 55px; margin: 10px 5px; }
+            .social-btn-3d svg { width: 28px; height: 28px; }
         }
     </style>
 </head>
 <body>
 
+<!-- شريط التنقل (مفرود على الديسك توب / جانبي على الموبايل) -->
 <nav>
     <div class="nav-logo">
         <img src="images/logo.png" alt="شعار مركز الحرية لعلاج الإدمان" title="مركز الحرية">
     </div>
     
+    <!-- زر قائمة الموبايل -->
     <div class="menu-toggle" id="mobile-menu">
         <span></span>
         <span></span>
@@ -260,9 +264,12 @@
         <li><a href="#pricing">أسعار برامجنا</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
     </ul>
+    
+    <!-- زر يظهر فقط في الديسك توب -->
     <a href="https://wa.me/+201211117075" class="nav-cta" target="_blank" rel="noopener noreferrer">احجز استشارتك</a>
 </nav>
 
+<!-- القسم الرئيسي -->
 <section class="hero">
     <div class="hero-text-box" data-aos="fade-left">
         <img src="images/logo.png" alt="شعار مؤسسة الحرية" class="hero-logo" title="مؤسسة الحرية">
@@ -277,6 +284,7 @@
     </div>
 </section>
 
+<!-- شريط الأخبار المتحرك -->
 <div class="ticker-wrapper" dir="ltr">
     <div class="ticker-track">
         <div class="ticker-item" dir="rtl">
@@ -300,6 +308,7 @@
     </div>
 </div>
 
+<!-- قسم عن المركز -->
 <section id="about" class="about-section">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">ملاذك الآمن</span>
@@ -323,6 +332,7 @@
     </div>
 </section>
 
+<!-- قسم الخدمات -->
 <section id="services" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">برامج متخصصة</span>
@@ -348,6 +358,7 @@
     </div>
 </section>
 
+<!-- قسم المرافق -->
 <section id="facilities">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">بنية تحتية متكاملة</span>
@@ -361,6 +372,7 @@
     </div>
 </section>
 
+<!-- قسم الأنشطة -->
 <section id="activities" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">تجديد الطاقة</span>
@@ -374,6 +386,7 @@
     </div>
 </section>
 
+<!-- قسم المجتمع -->
 <section id="community">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">روابط تدوم</span>
@@ -387,6 +400,7 @@
     </div>
 </section>
 
+<!-- ======== قسم خطط الأسعار ======== -->
 <section id="pricing" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">باقات العلاج</span>
@@ -394,6 +408,7 @@
         <p>أسعار شفافة وباقات تناسب كافة الاحتياجات. ينقسم العلاج إلى مرحلتين أساسيتين.</p>
     </div>
 
+    <!-- المرحلة الأولى -->
     <div class="pricing-phase" data-aos="fade-up">
         <h3>المرحلة الأولى: سحب السموم والتشخيص</h3>
         <p>فترة العلاج الطبي والتشخيص (من أسبوع إلى 10 أيام للدخول الإرادي - أو 15 يوم للإلزامي).</p>
@@ -428,11 +443,12 @@
         
         <div class="medical-test-alert">
             يُضاف 1000 ج (تدفع مرة واحدة عند الدخول) لعمل تحاليل طبية شاملة:<br>
-            <span style="font-weight: 600; font-size: 14px; color: var(--navy);">صورة دم - وظائف كبد - وظائف كلى - سكر تراكمي - دهون الدم - تحليل مخدرات - رسم قلب.</span>
-            <br><span style="font-size: 13px; color: var(--gray);">* مصاريف الإقامة غير شاملة المصاريف الشخصية.</span>
+            <span style="font-weight: 600; font-size: 15px; color: var(--navy);">صورة دم - وظائف كبد - وظائف كلى - سكر تراكمي - دهون الدم - تحليل مخدرات - رسم قلب.</span>
+            <br><span style="font-size: 14px; color: var(--gray);">* مصاريف الإقامة غير شاملة المصاريف الشخصية.</span>
         </div>
     </div>
 
+    <!-- المرحلة الثانية -->
     <div class="pricing-phase" data-aos="fade-up">
         <h3>المرحلة الثانية: إعادة التأهيل النفسي والسلوكي</h3>
         <p>أسعار الإقامة الشهرية في قطاع وادي النطرون، مقسمة حسب الفئات والقطاعات:</p>
@@ -479,42 +495,80 @@
     </div>
 </section>
 
+<!-- قسم المنهجية (الخطوات) -->
+<section class="approach-section">
+    <div class="section-header" data-aos="fade-up">
+        <span class="section-tag" style="background: rgba(255,255,255,0.1); color:#fff;">خطوات التعافي</span>
+        <h2>طريقك المدروس نحو الحرية</h2>
+    </div>
+    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="approach-card" data-aos="fade-up">
+            <div class="approach-num">01</div>
+            <h3>التقييم الشامل</h3>
+            <p>فحص طبي ونفسي دقيق لتحديد البرنامج العلاجي الأنسب.</p>
+        </div>
+        <div class="approach-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="approach-num">02</div>
+            <h3>سحب السموم</h3>
+            <p>إزالة السموم بأمان تام باستخدام أحدث بروتوكولات الأدوية.</p>
+        </div>
+        <div class="approach-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="approach-num">03</div>
+            <h3>التأهيل السلوكي</h3>
+            <p>علاج الأسباب النفسية لضمان عدم العودة للإدمان.</p>
+        </div>
+        <div class="approach-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="approach-num">04</div>
+            <h3>الرعاية اللاحقة</h3>
+            <p>متابعة دورية لضمان استمرارية التعافي في الحياة اليومية.</p>
+        </div>
+    </div>
+</section>
+
+<!-- قسم التواصل وأيقونات 3D -->
 <section id="contact">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">خدمة العملاء</span>
         <h2>تواصل معنا</h2>
     </div>
     <div class="contact-wrapper" data-aos="zoom-in">
-        <h3 style="color: var(--navy); font-size: 28px; font-weight: 900; margin-bottom:15px;">نحن هنا للإجابة على استفساراتك فوراً</h3>
+        <h3 style="color: var(--navy); font-size: 32px; font-weight: 900; margin-bottom:15px;">نحن هنا للإجابة على استفساراتك فوراً</h3>
         <p>تواصل معنا بأي وقت وسيتم الرد عليك في سرية تامة.</p>
         
-        <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 30px;">
+        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 40px; padding: 20px 0;">
+            <!-- واتساب -->
             <a href="https://wa.me/+201211117075" target="_blank" class="social-btn-3d btn-wa" title="راسلنا عبر واتساب">
                 <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
             </a>
+            <!-- فيسبوك -->
             <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" class="social-btn-3d btn-fb" title="صفحتنا على فيسبوك">
                 <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
+            <!-- انستجرام -->
             <a href="https://www.instagram.com/center.el7oria.drug.addiction" target="_blank" class="social-btn-3d btn-ig" title="حسابنا على انستجرام">
                 <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </a>
+            <!-- ايميل -->
             <a href="mailto:elhoreya99@gmail.com" class="social-btn-3d btn-mail" title="أرسل لنا بريداً إلكترونياً">
                 <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
             </a>
         </div>
         
-        <p style="margin-top: 30px; font-weight: 800; color: var(--navy); font-size: 22px; direction: ltr;">+20 12 1111 70 75</p>
+        <p style="margin-top: 30px; font-weight: 800; color: var(--navy); font-size: 26px; direction: ltr;">+20 12 1111 70 75</p>
     </div>
 </section>
 
+<!-- الفوتر -->
 <footer>
     <p>جميع الحقوق محفوظة &copy; 2026 <strong>مركز الحرية لعلاج الإدمان بوادي النطرون</strong>.</p>
 </footer>
 
+<!-- زر الواتساب العائم -->
 <a href="https://wa.me/+201211117075" class="whatsapp-float" target="_blank" title="تواصل معنا عبر واتساب">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
 </a>
 
+<!-- السكريبتات -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true, offset: 100 });
