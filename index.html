@@ -58,7 +58,7 @@
         .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); box-shadow: 0 7px 0 rgba(255,255,255,0.5); border-color: var(--white); color: white; }
         .btn-outline:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(255,255,255,0.4); }
 
-        /* ======== شريط الأخبار المتحرك (تم نقله للأعلى وعكس الاتجاه) ======== */
+        /* شريط الأخبار المتحرك */
         .ticker-wrapper { 
             width: 100%; 
             overflow: hidden; 
@@ -66,14 +66,13 @@
             color: var(--white); 
             padding: 15px 0; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            margin-top: 80px; /* لضمان ظهوره أسفل الناف بار الثابت مباشرة */
+            margin-top: 80px; 
             position: relative;
             z-index: 99;
         }
         .ticker-track { 
             display: inline-flex; 
             white-space: nowrap; 
-            /* إضافة كلمة reverse لعكس اتجاه الحركة ليتناسب مع العربي */
             animation: scrollText 30s linear infinite reverse; 
         }
         .ticker-track:hover { animation-play-state: paused; cursor: pointer; }
@@ -140,7 +139,7 @@
         .gallery-overlay h3 { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 5px; }
         .gallery-overlay p { color: rgba(255,255,255,0.9); font-size: 14px; }
 
-        /* قسم خطط الأسعار */
+        /* ======== قسم خطط الأسعار (تم حل التوسيط) ======== */
         .pricing-phase { max-width: 1200px; margin: 0 auto 60px; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow); border-top: 5px solid var(--sky); }
         .pricing-phase h3 { font-size: 28px; color: var(--navy); margin-bottom: 15px; font-weight: 900; text-align: center;}
         .pricing-phase > p { text-align: center; color: var(--gray); margin-bottom: 30px; font-weight: 600; font-size: 16px; }
@@ -152,7 +151,20 @@
         .price-box .amount { font-size: 26px; font-weight: 900; color: var(--sky); margin-bottom: 5px; direction: ltr; }
         .price-box .period { font-size: 14px; color: var(--gray); font-weight: 600; }
         
-        .pricing-category-title { font-size: 22px; color: var(--white); background: var(--navy); padding: 10px 20px; border-radius: 10px; margin: 40px 0 20px; display: inline-block; font-weight: 800;}
+        /* التعديل الجذري لعناوين الباقات عشان تتوسطن في الشاشة */
+        .pricing-category-title { 
+            display: block; 
+            width: fit-content; 
+            margin: 40px auto 20px auto; 
+            text-align: center; 
+            font-size: 22px; 
+            color: var(--white); 
+            background: var(--navy); 
+            padding: 10px 30px; 
+            border-radius: 10px; 
+            font-weight: 800;
+        }
+        
         .medical-test-alert { background: rgba(234, 88, 12, 0.1); color: #ea580c; padding: 20px; border-radius: 10px; text-align: center; font-weight: 700; margin-top: 20px; border: 2px dashed #ea580c; }
 
         /* المنهجية */
@@ -168,13 +180,7 @@
         
         @keyframes dynamicFloat { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
         
-        .social-btn-3d {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 75px; height: 75px; border-radius: 50%; color: var(--white);
-            margin: 0 15px; text-decoration: none;
-            transition: all 0.2s ease;
-            animation: dynamicFloat 3s ease-in-out infinite;
-        }
+        .social-btn-3d { display: inline-flex; align-items: center; justify-content: center; width: 75px; height: 75px; border-radius: 50%; color: var(--white); margin: 0 15px; text-decoration: none; transition: all 0.2s ease; animation: dynamicFloat 3s ease-in-out infinite; }
         .social-btn-3d svg { width: 40px; height: 40px; fill: currentColor; }
         .social-btn-3d:active { transform: translateY(4px) !important; box-shadow: 0 2px 0px rgba(0,0,0,0.3) !important; animation: none;}
         
@@ -190,52 +196,59 @@
         .btn-mail { background-color: var(--mail-color); box-shadow: 0 6px 0 #b33328, 0 10px 15px rgba(234,67,53,0.4); animation-delay: 1.5s;}
         .btn-mail:hover { background-color: #f54a3b; box-shadow: 0 8px 0 #b33328, 0 15px 20px rgba(234,67,53,0.5); transform: translateY(-5px); animation: none;}
 
-        /* الفوتر وزر الواتساب العائم */
-        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; font-size: 15px; }
+        /* ======== الفوتر وتصميم الـ Powered By ======== */
+        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 20px; font-size: 15px; }
+        
+        /* تصميم حقوق الملكية واللوجو */
+        .powered-by-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+            direction: ltr; /* مهم جداً لعكس الاتجاه لتكون Powered by على اليسار */
+        }
+        .powered-by-box span {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .powered-by-box img {
+            height: 35px;
+            background: #ffffff;
+            padding: 5px 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+        .powered-by-box img:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* زر الواتساب العائم */
         .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background: var(--wa-color); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 6px 0 #1da851, 0 10px 20px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.2s, box-shadow 0.2s; animation: dynamicFloat 2s ease-in-out infinite; }
         .whatsapp-float:hover { filter: brightness(1.1); transform: translateY(-5px); box-shadow: 0 8px 0 #1da851, 0 15px 25px rgba(37,211,102,0.5); animation: none;}
         .whatsapp-float:active { transform: translateY(4px); box-shadow: 0 2px 0 #1da851; }
 
-        /* التجاوب مع الموبايل */
+        /* התجاوب مع الموبايل */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-logo img { height: 45px; }
-            
             .menu-toggle { display: flex; }
             
-            .nav-links { 
-                position: fixed; 
-                top: 0; 
-                right: -100%; 
-                width: 280px; 
-                height: 100vh; 
-                background: var(--white); 
-                flex-direction: column; 
-                align-items: flex-start;
-                padding: 80px 20px 30px; 
-                box-shadow: -5px 0 20px rgba(0,0,0,0.15); 
-                transition: right 0.4s ease-in-out;
-            }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--white); flex-direction: column; align-items: flex-start; padding: 80px 20px 30px; box-shadow: -5px 0 20px rgba(0,0,0,0.15); transition: right 0.4s ease-in-out; }
             .nav-links.active { right: 0; } 
             .nav-links li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05); }
-            .nav-links a { 
-                display: block; 
-                padding: 15px 10px; 
-                font-size: 18px; 
-                color: var(--navy); 
-                border: none !important; 
-                background: none !important; 
-                box-shadow: none !important; 
-                text-align: right; 
-                width: 100%;
-            }
+            .nav-links a { display: block; padding: 15px 10px; font-size: 18px; color: var(--navy); border: none !important; background: none !important; box-shadow: none !important; text-align: right; width: 100%; }
             .nav-cta { display: none; } 
             
             .menu-toggle.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
             .menu-toggle.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
-            .ticker-wrapper { margin-top: 75px; } /* ضبط المسافة للموبايل */
+            .ticker-wrapper { margin-top: 75px; } 
 
             .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 10px; min-height: auto; }
             .hero-text-box { padding: 20px; }
@@ -279,7 +292,7 @@
     <a href="https://wa.me/+201211117075" class="nav-cta" target="_blank" rel="noopener noreferrer">احجز استشارتك</a>
 </nav>
 
-<!-- شريط الأخبار المتحرك (تم نقله أسفل الناف بار مباشرة) -->
+<!-- شريط الأخبار المتحرك -->
 <div class="ticker-wrapper" dir="ltr">
     <div class="ticker-track">
         <div class="ticker-item" dir="rtl">
@@ -568,9 +581,17 @@
     </div>
 </section>
 
-<!-- الفوتر -->
+<!-- الفوتر وقسم Powered by -->
 <footer>
     <p>جميع الحقوق محفوظة &copy; 2026 <strong>مركز الحرية لعلاج الإدمان بوادي النطرون</strong>.</p>
+    
+    <!-- قسم Powered by -->
+    <div class="powered-by-box">
+        <span>Powered by</span>
+        <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" title="Service Hub">
+            <img src="images/service-hub.png" alt="Service Hub">
+        </a>
+    </div>
 </footer>
 
 <!-- زر الواتساب العائم -->
