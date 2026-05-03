@@ -73,7 +73,7 @@
         .ticker-wrapper {
             width: 100%;
             overflow: hidden;
-            background-color: var(--accent); /* لون مريح ومميز */
+            background-color: var(--accent);
             color: var(--white);
             padding: 15px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -84,7 +84,7 @@
             animation: scrollText 30s linear infinite;
         }
         .ticker-track:hover {
-            animation-play-state: paused; /* يوقف الحركة عند وضع الماوس */
+            animation-play-state: paused;
             cursor: pointer;
         }
         .ticker-item {
@@ -100,7 +100,6 @@
             font-size: 14px;
             opacity: 0.6;
         }
-        /* حركة الأنميشن للشريط */
         @keyframes scrollText {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -163,8 +162,8 @@
 
         /* الفوتر وزر الواتساب */
         footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 30px 20px; font-size: 14px; }
-        .whatsapp { position: fixed; bottom: 30px; left: 30px; background: #25D366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 5px 20px rgba(37,211,102,0.4); animation: pulse 2s infinite; z-index: 999; transition: transform 0.3s; }
-        .whatsapp:hover { transform: scale(1.1); color: #fff;}
+        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background: #25D366; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 5px 20px rgba(37,211,102,0.4); animation: pulse 2s infinite; z-index: 999; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); color: #fff;}
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
 
         /* التجاوب مع الموبايل */
@@ -190,7 +189,7 @@
 <!-- شريط التنقل -->
 <nav>
     <div class="nav-logo">
-        <img src="logo.png" alt="شعار مركز الحرية لعلاج الإدمان" title="مركز الحرية">
+        <img src="images/logo.png" alt="شعار مركز الحرية لعلاج الإدمان" title="مركز الحرية">
     </div>
     <ul class="nav-links">
         <li><a href="#about">عن المركز</a></li>
@@ -202,10 +201,10 @@
     <a href="https://wa.me/+201211117075" class="nav-cta" target="_blank" rel="noopener noreferrer">احجز استشارتك</a>
 </nav>
 
-<!-- القسم الرئيسي -->
+<!-- القسم الرئيسي (تم تعديل المسارات لإضافة /images) -->
 <section class="hero">
     <div class="hero-text-box" data-aos="fade-left">
-        <img src="logo-white.png" alt="شعار مؤسسة الحرية الأبيض" class="hero-logo" title="مؤسسة الحرية">
+        <img src="images/logo-white.png" alt="شعار مؤسسة الحرية الأبيض" class="hero-logo" title="مؤسسة الحرية">
         <h1>مركز <span>الحرية</span> لعلاج الإدمان</h1>
         <div class="hero-btns">
             <a href="#contact" class="btn-primary">ابدأ رحلة التعافي الآن</a>
@@ -213,7 +212,7 @@
         </div>
     </div>
     <div class="hero-image-box" data-aos="fade-right">
-        <img src="hero-bg.jpg" alt="أكبر نسبة تعافي من الإدمان في مصر" title="أعلى نسب التعافي بمركز الحرية">
+        <img src="images/hero-bg.jpg" alt="أكبر نسبة تعافي من الإدمان في مصر" title="أعلى نسب التعافي بمركز الحرية">
     </div>
 </section>
 
@@ -230,7 +229,7 @@
             إقامة فندقية متميزة <span>✦</span> 
             سرية تامة واحترافية <span>✦</span>
         </div>
-        <!-- المجموعة الثانية (لضمان استمرار الحركة بدون انقطاع) -->
+        <!-- المجموعة الثانية -->
         <div class="ticker-item" dir="rtl">
             مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> 
             أعلى نسب تعافي في مصر <span>✦</span> 
@@ -247,8 +246,8 @@
 <section id="about" class="about-section">
     <div class="about-grid">
         <div class="about-img-stack" data-aos="fade-left">
-            <img class="about-img-main" src="about-building.jpg" alt="واجهة مبنى مركز الحرية لعلاج الإدمان" title="مبنى المركز">
-            <img class="about-img-accent" src="about-garden.jpg" alt="المساحات الخضراء والأشجار بمركز الحرية" title="حدائق المركز">
+            <img class="about-img-main" src="images/about-building.jpg" alt="واجهة مبنى مركز الحرية لعلاج الإدمان" title="مبنى المركز">
+            <img class="about-img-accent" src="images/about-garden.jpg" alt="المساحات الخضراء والأشجار بمركز الحرية" title="حدائق المركز">
         </div>
         <div class="about-text" data-aos="fade-right">
             <span class="section-tag">ملاذك الآمن</span>
@@ -304,21 +303,21 @@
     </div>
     <div class="grid-3">
         <div class="gallery-card" data-aos="zoom-in">
-            <img src="room-double.jpg" alt="غرف إقامة مزدوجة بمركز الحرية" title="غرف الإقامة">
+            <img src="images/room-double.jpg" alt="غرف إقامة مزدوجة بمركز الحرية" title="غرف الإقامة">
             <div class="gallery-overlay">
                 <h3>غرف إقامة مزدوجة</h3>
                 <p>إقامة فندقية مجهزة تلبي كافة احتياجات النزلاء.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
-            <img src="room-private.jpg" alt="أجنحة إقامة ذات طابع ريفي هادئ" title="أجنحة الإقامة">
+            <img src="images/room-private.jpg" alt="أجنحة إقامة ذات طابع ريفي هادئ" title="أجنحة الإقامة">
             <div class="gallery-overlay">
                 <h3>أجنحة إقامة ذات طابع ريفي</h3>
                 <p>غرف مصممة بطابع يبعث على الدفء والراحة النفسية.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="hall-seminar.jpg" alt="قاعة محاضرات وعلاج جماعي" title="قاعات التأهيل">
+            <img src="images/hall-seminar.jpg" alt="قاعة محاضرات وعلاج جماعي" title="قاعات التأهيل">
             <div class="gallery-overlay">
                 <h3>قاعات التأهيل والندوات</h3>
                 <p>مجهزة بالكامل لعقد الجلسات النفسية والمحاضرات العلاجية.</p>
@@ -336,21 +335,21 @@
     </div>
     <div class="grid-3">
         <div class="gallery-card" data-aos="fade-up">
-            <img src="sports-football.jpg" alt="ملاعب كرة القدم الخماسية بالمركز" title="الملاعب الرياضية">
+            <img src="images/sports-football.jpg" alt="ملاعب كرة القدم الخماسية بالمركز" title="الملاعب الرياضية">
             <div class="gallery-overlay">
                 <h3>ملاعب رياضية مفتوحة</h3>
                 <p>لتعزيز روح المنافسة والعمل الجماعي بكرة القدم.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="sports-running.jpg" alt="رياضة الجري في الهواء الطلق" title="اللياقة البدنية">
+            <img src="images/sports-running.jpg" alt="رياضة الجري في الهواء الطلق" title="اللياقة البدنية">
             <div class="gallery-overlay">
                 <h3>رياضة الجري واللياقة</h3>
                 <p>تمارين صباحية في الهواء الطلق لتجديد الدورة الدموية.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="sports-indoor.jpg" alt="صالة ألعاب تنس طاولة" title="صالة الألعاب">
+            <img src="images/sports-indoor.jpg" alt="صالة ألعاب تنس طاولة" title="صالة الألعاب">
             <div class="gallery-overlay">
                 <h3>أنشطة ترفيهية داخلية</h3>
                 <p>صالة ألعاب وتنس طاولة لقضاء أوقات ممتعة.</p>
@@ -368,24 +367,24 @@
     </div>
     <div class="grid-3">
         <div class="gallery-card" data-aos="zoom-in">
-            <img src="community-family.jpg" alt="يوم عائلي وتجمع للمتعافين" title="الأيام العائلية">
+            <img src="images/community-family.jpg" alt="يوم عائلي وتجمع للمتعافين" title="الأيام العائلية">
             <div class="gallery-overlay">
                 <h3>الأيام العائلية المفتوحة</h3>
                 <p>لتعزيز الترابط الأسري والدعم المعنوي والاحتفال بالتعافي.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="100">
-            <img src="community-group.jpg" alt="جلسات العلاج الجماعي في دائرة" title="التلاحم والدعم">
+            <img src="images/community-group.jpg" alt="جلسات العلاج الجماعي في دائرة" title="التلاحم والدعم">
             <div class="gallery-overlay">
                 <h3>جلسات العلاج الجماعي</h3>
                 <p>جلسات تقارب في الطبيعة لتعزيز الثقة بالنفس والمشاركة.</p>
             </div>
         </div>
         <div class="gallery-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="community-therapy.jpg" alt="جلسات التأهيل النفسي والتوجيه" title="التوجيه والنصح">
+            <img src="images/community-therapy.jpg" alt="جلسات التأهيل النفسي والتوجيه" title="التوجيه والنصح">
             <div class="gallery-overlay">
                 <h3>التأهيل النفسي والتوجيه</h3>
-                <p>فريق معالج يعمل بحب واحترافية لتقديم النصح والإرشاد.</p>
+                <p>فريق معالج يعمل بحب واحترافية لتقديم النصح للإرشاد.</p>
             </div>
         </div>
     </div>
@@ -428,7 +427,6 @@
         <p>نحن هنا للاستماع إليك ومساعدتك. تواصل معنا بأي وقت وسيتم الرد عليك في سرية تامة ومطلقة.</p>
         
         <div class="contact-grid">
-            <!-- البطاقة الأولى: الهاتف -->
             <div class="contact-item">
                 <div class="contact-item-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -437,7 +435,6 @@
                 <a href="https://wa.me/+201211117075" target="_blank" dir="ltr">+20 12 1111 70 75</a>
             </div>
 
-            <!-- البطاقة الثانية: البريد الإلكتروني -->
             <div class="contact-item">
                 <div class="contact-item-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
@@ -446,7 +443,6 @@
                 <a href="mailto:elhoreya99@gmail.com">elhoreya99@gmail.com</a>
             </div>
 
-            <!-- البطاقة الثالثة: منصات التواصل -->
             <div class="contact-item">
                 <div class="contact-item-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
