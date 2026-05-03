@@ -8,64 +8,67 @@
     
     <!-- خطوط جوجل (Cairo) -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- مكتبة الحركات -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* الألوان والهوية البصرية الجديدة */
+        /* الألوان والهوية البصرية */
         :root {
-            --primary-dark: #112d4e;   /* كحلي داكن وفخم */
-            --primary-light: #3f72af;  /* أزرق مريح للعين */
-            --accent: #11999e;         /* لون مميز للأزرار والعناصر */
-            --bg-light: #f9f9f9;       /* خلفية رمادية فاتحة جداً */
+            --primary-dark: #112d4e;   
+            --primary-light: #3f72af;  
+            --accent: #11999e;         
+            --bg-light: #f9f9f9;       
             --white: #ffffff;
             --text-dark: #333333;
             --text-gray: #666666;
             --shadow: 0 8px 25px rgba(0,0,0,0.06);
             --radius: 16px;
+            --transition: all 0.3s ease-in-out;
         }
 
         /* الإعدادات الأساسية */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.8; overflow-x: hidden; width: 100%; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
         img { max-width: 100%; height: auto; display: block; border-radius: var(--radius); }
 
         /* شريط التنقل */
-        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; max-width: 1400px; margin: 0 auto; }
-        .logo img { height: 50px; border-radius: 0; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(8px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; max-width: 1400px; margin: 0 auto; }
+        .logo img { height: 60px; border-radius: 8px; object-fit: contain; }
         .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { color: var(--primary-dark); font-weight: 600; font-size: 16px; transition: color 0.3s; }
+        .nav-links a { color: var(--primary-dark); font-weight: 700; font-size: 15px; }
         .nav-links a:hover { color: var(--accent); }
         .btn-call { background: var(--accent); color: var(--white); padding: 10px 24px; border-radius: 30px; font-weight: 700; transition: all 0.3s; }
         .btn-call:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
         /* القسم الرئيسي (الهيرو) */
-        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 100px 20px 20px; }
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding-top: 80px; }
         .hero-bg { position: absolute; inset: 0; background: url('images/hero-bg.jpg') center/cover no-repeat; z-index: -2; }
         .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(17, 45, 78, 0.9), rgba(63, 114, 175, 0.85)); z-index: -1; }
-        .hero-content { max-width: 800px; z-index: 1; }
-        .hero-content img { width: 180px; margin: 0 auto 30px; border-radius: 0; }
-        .hero h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 800; margin-bottom: 20px; line-height: 1.4; }
-        .hero h1 span { color: #8ee4af; } /* لون أخضر فاتح مريح للأمل */
+        .hero-content { max-width: 800px; z-index: 1; padding: 0 20px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .hero-logo { width: 350px; max-width: 90%; margin: 0 auto 30px; border-radius: 0; object-fit: contain; }
+        .hero h1 { font-size: clamp(28px, 5vw, 55px); font-weight: 800; margin-bottom: 20px; line-height: 1.4; }
+        .hero h1 span { color: #8ee4af; } 
         .hero p { font-size: 18px; margin-bottom: 40px; color: rgba(255,255,255,0.9); }
-        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-        .btn-main { background: var(--white); color: var(--primary-dark); padding: 15px 35px; border-radius: 30px; font-size: 16px; font-weight: 700; transition: all 0.3s; }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; width: 100%; }
+        .btn-main { background: var(--white); color: var(--primary-dark); padding: 15px 35px; border-radius: 30px; font-size: 16px; font-weight: 700; transition: all 0.3s; text-align: center; }
         .btn-main:hover { background: #8ee4af; color: var(--primary-dark); transform: translateY(-3px); }
-        .btn-sec { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 15px 35px; border-radius: 30px; font-size: 16px; font-weight: 700; transition: all 0.3s; direction: ltr;}
+        .btn-sec { background: transparent; color: var(--white); border: 2px solid var(--white); padding: 15px 35px; border-radius: 30px; font-size: 16px; font-weight: 700; transition: all 0.3s; direction: ltr; text-align: center; }
         .btn-sec:hover { background: rgba(255,255,255,0.1); }
 
         /* التصميم العام للأقسام */
-        section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; }
+        section { padding: 80px 5%; max-width: 1400px; margin: 0 auto; overflow: hidden; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title span { display: inline-block; color: var(--accent); font-weight: 700; font-size: 14px; background: rgba(17, 153, 158, 0.1); padding: 5px 15px; border-radius: 20px; margin-bottom: 10px; }
-        .section-title h2 { color: var(--primary-dark); font-size: 36px; font-weight: 800; }
+        .section-title h2 { color: var(--primary-dark); font-size: clamp(26px, 4vw, 36px); font-weight: 800; }
         .section-title p { color: var(--text-gray); font-size: 16px; max-width: 600px; margin: 15px auto 0; }
 
-        /* قسم عن المركز (شبكة غير متماثلة لعرض الصور بشكل فني) */
+        /* قسم عن المركز */
         .about-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
         .about-images { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .about-images img { height: 100%; object-fit: cover; box-shadow: var(--shadow); }
+        .about-images img { height: 100%; width: 100%; object-fit: cover; box-shadow: var(--shadow); }
         .about-images img:first-child { grid-column: 1 / -1; height: 250px; }
         .about-images img:nth-child(2), .about-images img:nth-child(3) { height: 200px; }
         .about-text h3 { color: var(--primary-dark); font-size: 28px; font-weight: 700; margin-bottom: 20px; }
@@ -74,18 +77,18 @@
         .about-features li { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-weight: 600; color: var(--primary-dark); }
         .about-features li svg { width: 24px; height: 24px; color: var(--accent); flex-shrink: 0; }
 
-        /* شبكة الكروت للخدمات والأنشطة */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* شبكة الكروت */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
         /* كروت الخدمات */
         .service-box { background: var(--white); padding: 40px 30px; border-radius: var(--radius); text-align: center; box-shadow: var(--shadow); transition: transform 0.3s; border-bottom: 4px solid transparent; }
         .service-box:hover { transform: translateY(-10px); border-bottom-color: var(--accent); }
         .service-icon { width: 70px; height: 70px; background: rgba(17, 153, 158, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--accent); }
-        .service-box h3 { color: var(--primary-dark); font-size: 20px; margin-bottom: 15px; }
+        .service-box h3 { color: var(--primary-dark); font-size: 20px; margin-bottom: 15px; font-weight: 700; }
         .service-box p { color: var(--text-gray); font-size: 15px; }
 
-        /* كروت الصور (المرافق والمجتمع) */
-        .image-card { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); group; aspect-ratio: 4/3; }
+        /* كروت الصور */
+        .image-card { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); aspect-ratio: 4/3; }
         .image-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .image-card:hover img { transform: scale(1.05); }
         .image-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 30px 20px 20px; background: linear-gradient(transparent, rgba(17, 45, 78, 0.95)); color: var(--white); text-align: right; }
@@ -96,24 +99,28 @@
         .steps-wrapper { background: var(--white); border-radius: 24px; padding: 50px; box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
         .step-box { text-align: center; }
         .step-number { width: 60px; height: 60px; background: var(--primary-dark); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 800; margin: 0 auto 20px; border: 5px solid rgba(17, 45, 78, 0.1); }
-        .step-box h3 { color: var(--primary-dark); font-size: 18px; margin-bottom: 10px; }
+        .step-box h3 { color: var(--primary-dark); font-size: 18px; margin-bottom: 10px; font-weight: 700; }
         .step-box p { color: var(--text-gray); font-size: 14px; }
 
         /* قسم التواصل السريع */
         .contact-section { background: var(--primary-dark); color: var(--white); border-radius: 24px; padding: 60px 40px; margin-bottom: 40px; text-align: center; box-shadow: var(--shadow); }
-        .contact-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; }
+        .contact-section h2 { font-size: 32px; font-weight: 800; margin-bottom: 20px; color: var(--white); }
         .contact-section p { font-size: 16px; margin-bottom: 40px; opacity: 0.9; }
         .contact-methods { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .contact-method { background: rgba(255,255,255,0.1); padding: 20px 30px; border-radius: var(--radius); min-width: 250px; transition: background 0.3s; }
-        .contact-method:hover { background: rgba(255,255,255,0.2); }
+        .contact-method { background: rgba(255,255,255,0.1); padding: 30px 20px; border-radius: var(--radius); min-width: 250px; transition: background 0.3s; border: 1px solid rgba(255,255,255,0.1); }
+        .contact-method:hover { background: rgba(255,255,255,0.2); transform: translateY(-5px); }
         .contact-method svg { width: 35px; height: 35px; color: var(--accent); margin-bottom: 15px; }
-        .contact-method strong { display: block; font-size: 18px; margin-bottom: 5px; }
-        .contact-method a { font-size: 16px; font-weight: 600; direction: ltr; display: inline-block; }
+        .contact-method strong { display: block; font-size: 18px; margin-bottom: 10px; }
+        .contact-method a, .contact-method span { color: var(--white); font-size: 16px; font-weight: 600; direction: ltr; display: inline-block; word-break: break-word; }
+        
+        /* أيقونات السوشيال ميديا */
+        .social-links { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
+        .social-links a { width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
+        .social-links a:hover { background: var(--white); color: var(--accent); transform: scale(1.1); }
+        .social-links svg { margin-bottom: 0; width: 22px; height: 22px; color: inherit; }
 
-        /* الفوتر */
+        /* الفوتر وزر الواتساب */
         footer { text-align: center; padding: 30px 20px; color: var(--text-gray); font-size: 14px; }
-
-        /* زر الواتساب العائم */
         .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 15px rgba(37,211,102,0.4); z-index: 100; transition: transform 0.3s; }
         .whatsapp-float:hover { transform: scale(1.1); color: white; }
         .whatsapp-float svg { width: 35px; height: 35px; }
@@ -121,8 +128,10 @@
         /* التجاوب مع شاشات الموبايل */
         @media (max-width: 768px) {
             .navbar { padding: 15px 20px; }
-            .nav-links { display: none; } /* يمكن إضافة قائمة جانبية لاحقاً */
+            .nav-logo img { height: 45px; }
+            .nav-links { display: none; }
             .hero h1 { font-size: 28px; }
+            .hero-logo { width: 250px; }
             .about-wrapper { grid-template-columns: 1fr; }
             .about-images img:first-child { height: 200px; }
             section { padding: 60px 20px; }
@@ -130,19 +139,20 @@
             .contact-section { padding: 40px 20px; }
             .hero-buttons { flex-direction: column; width: 100%; }
             .hero-buttons a { width: 100%; }
+            .contact-method { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- شريط التنقل العلوي -->
+    <!-- شريط التنقل -->
     <header>
         <div class="navbar">
             <a href="#" class="logo">
-                <img src="images/logo.png" alt="شعار مركز الحرية">
+                <img src="images/logo.png" alt="شعار مركز الحرية لعلاج الإدمان">
             </a>
             <ul class="nav-links">
-                <li><a href="#about">من نحن</a></li>
+                <li><a href="#about">عن المركز</a></li>
                 <li><a href="#services">الخدمات</a></li>
                 <li><a href="#facilities">المرافق</a></li>
                 <li><a href="#activities">الأنشطة</a></li>
@@ -156,12 +166,12 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img src="images/logo-white.png" alt="شعار مركز الحرية الأبيض">
+        <div class="hero-content" data-aos="fade-up">
+            <img src="images/logo-white.png" alt="شعار مؤسسة الحرية الأبيض" class="hero-logo">
             <h1>مركز <span>الحرية</span> لعلاج الإدمان</h1>
             <p>نمنحك الحياة من جديد — رعاية متكاملة وتأهيل نفسي في بيئة علاجية راقية وآمنة بوادي النطرون، مع تحقيق أعلى نسب التعافي في مصر.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-main">ابدأ رحلة التعافي</a>
+                <a href="#contact" class="btn-main">ابدأ رحلة التعافي الآن</a>
                 <a href="tel:+201211117075" class="btn-sec">📞 +20 12 1111 70 75</a>
             </div>
         </div>
@@ -170,13 +180,13 @@
     <!-- قسم عن المركز -->
     <section id="about">
         <div class="about-wrapper">
-            <div class="about-images">
+            <div class="about-images" data-aos="fade-left">
                 <img src="images/about-building.jpg" alt="واجهة مبنى مركز الحرية لعلاج الإدمان">
                 <img src="images/about-garden.jpg" alt="المساحات الخضراء بمركز الحرية">
-                <img src="images/community-family.jpg" alt="مجتمع داعم بمركز الحرية">
+                <img src="images/hero-bg.jpg" alt="أعلى نسب تعافي بمركز الحرية">
             </div>
-            <div class="about-text">
-                <div class="section-title" style="text-align: right;">
+            <div class="about-text" data-aos="fade-right">
+                <div class="section-title" style="text-align: right; margin-bottom: 20px;">
                     <span>ملاذك الآمن</span>
                     <h2>بيئة علاجية متكاملة وسط الطبيعة</h2>
                 </div>
@@ -201,27 +211,27 @@
 
     <!-- قسم الخدمات الطبية -->
     <section id="services" style="background-color: var(--white);">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
             <span>خدماتنا العلاجية</span>
             <h2>برامج متخصصة للتعافي التام</h2>
             <p>نقدم مجموعة متكاملة من الخدمات الطبية والنفسية لضمان رحلة تعافي آمنة وفعالة.</p>
         </div>
         <div class="grid-cards">
-            <div class="service-box">
+            <div class="service-box" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
                 </div>
                 <h3>سحب السموم بدون ألم</h3>
                 <p>تتم هذه المرحلة تحت إشراف طبي دقيق لتخفيف الأعراض الانسحابية وضمان مرورها بأمان.</p>
             </div>
-            <div class="service-box">
+            <div class="service-box" data-aos="fade-up" data-aos-delay="200">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
                 <h3>التأهيل النفسي والسلوكي</h3>
                 <p>جلسات علاج نفسي تهدف إلى تغيير السلوكيات السلبية ومعالجة الأسباب الجذرية للإدمان.</p>
             </div>
-            <div class="service-box">
+            <div class="service-box" data-aos="fade-up" data-aos-delay="300">
                 <div class="service-icon">
                     <svg viewBox="0 0 24 24" width="35" height="35" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                 </div>
@@ -233,26 +243,26 @@
 
     <!-- قسم المرافق والبنية التحتية -->
     <section id="facilities">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
             <span>بنية تحتية متكاملة</span>
             <h2>إقامة فندقية وقاعات مجهزة</h2>
         </div>
         <div class="grid-cards">
-            <div class="image-card">
+            <div class="image-card" data-aos="zoom-in">
                 <img src="images/room-double.jpg" alt="غرفة إقامة مزدوجة بمركز الحرية">
                 <div class="image-content">
                     <h3>غرف إقامة مزدوجة</h3>
                     <p>مجهزة بأعلى مستويات الراحة الفندقية.</p>
                 </div>
             </div>
-            <div class="image-card">
+            <div class="image-card" data-aos="zoom-in" data-aos-delay="100">
                 <img src="images/room-private.jpg" alt="غرفة إقامة ريفية هادئة">
                 <div class="image-content">
                     <h3>أجنحة إقامة هادئة</h3>
                     <p>تصميم مريح يبعث على الدفء والاسترخاء.</p>
                 </div>
             </div>
-            <div class="image-card">
+            <div class="image-card" data-aos="zoom-in" data-aos-delay="200">
                 <img src="images/hall-seminar.jpg" alt="قاعة محاضرات وجلسات تأهيل">
                 <div class="image-content">
                     <h3>قاعات التأهيل والندوات</h3>
@@ -264,26 +274,26 @@
 
     <!-- قسم الأنشطة الرياضية -->
     <section id="activities" style="background-color: var(--white);">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
             <span>تجديد النشاط</span>
             <h2>الرياضة جزء أساسي من العلاج</h2>
         </div>
         <div class="grid-cards">
-            <div class="image-card">
+            <div class="image-card" data-aos="fade-up">
                 <img src="images/sports-football.jpg" alt="ملاعب كرة قدم خماسية بالمركز">
                 <div class="image-content">
                     <h3>ملاعب رياضية مفتوحة</h3>
                     <p>لتعزيز روح المنافسة والعمل الجماعي.</p>
                 </div>
             </div>
-            <div class="image-card">
+            <div class="image-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="images/sports-running.jpg" alt="رياضة الجري في المساحات الخضراء">
                 <div class="image-content">
                     <h3>رياضة الجري واللياقة</h3>
                     <p>تمارين صباحية لتجديد الدورة الدموية.</p>
                 </div>
             </div>
-            <div class="image-card">
+            <div class="image-card" data-aos="fade-up" data-aos-delay="200">
                 <img src="images/sports-indoor.jpg" alt="صالة تنس طاولة وألعاب ترفيهية">
                 <div class="image-content">
                     <h3>أنشطة ترفيهية داخلية</h3>
@@ -295,26 +305,26 @@
 
     <!-- قسم المجتمع والعلاج الجماعي -->
     <section id="community">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
             <span>عائلة مركز الحرية</span>
             <h2>مجتمع داعم وروابط أخوية تدوم</h2>
         </div>
         <div class="grid-cards">
-            <div class="image-card">
+            <div class="image-card" data-aos="zoom-in">
                 <img src="images/community-group.jpg" alt="جلسات علاج جماعي في دائرة">
                 <div class="image-content">
                     <h3>جلسات العلاج الجماعي</h3>
                     <p>جلسات تقارب لتعزيز الثقة والمشاركة الوجدانية.</p>
                 </div>
             </div>
-            <div class="image-card">
+            <div class="image-card" data-aos="zoom-in" data-aos-delay="100">
                 <img src="images/community-therapy.jpg" alt="جلسات توجيه وإرشاد نفسي">
                 <div class="image-content">
                     <h3>إرشاد وتوجيه أخوي</h3>
                     <p>فريق معالج يعمل بحب واحترافية لتقديم النصح.</p>
                 </div>
             </div>
-            <div class="image-card">
+            <div class="image-card" data-aos="zoom-in" data-aos-delay="200">
                 <img src="images/community-family.jpg" alt="يوم عائلي وتجمع للمتعافين">
                 <div class="image-content">
                     <h3>الأيام العائلية المفتوحة</h3>
@@ -325,50 +335,62 @@
     </section>
 
     <!-- خطوات التعافي -->
-    <section>
-        <div class="section-title">
+    <section style="background-color: var(--white);">
+        <div class="section-title" data-aos="fade-up">
             <span>منهجية العلاج</span>
             <h2>طريقك المدروس نحو الحرية</h2>
         </div>
-        <div class="steps-wrapper">
+        <div class="steps-wrapper" data-aos="fade-up">
             <div class="step-box">
                 <div class="step-number">1</div>
                 <h3>التقييم الشامل</h3>
-                <p>فحص طبي ونفسي دقيق.</p>
+                <p>فحص طبي ونفسي دقيق لتحديد البرنامج المناسب.</p>
             </div>
             <div class="step-box">
                 <div class="step-number">2</div>
                 <h3>سحب السموم</h3>
-                <p>بروتوكولات طبية آمنة وبدون ألم.</p>
+                <p>بروتوكولات طبية آمنة وبدون الشعور بالألم.</p>
             </div>
             <div class="step-box">
                 <div class="step-number">3</div>
                 <h3>التأهيل السلوكي</h3>
-                <p>تغيير المفاهيم السلبية وعلاج الأسباب.</p>
+                <p>تغيير المفاهيم السلبية وعلاج أسباب الإدمان.</p>
             </div>
             <div class="step-box">
                 <div class="step-number">4</div>
                 <h3>الرعاية اللاحقة</h3>
-                <p>متابعة مستمرة لضمان عدم الانتكاس.</p>
+                <p>متابعة مستمرة لضمان التعافي وتجنب الانتكاس.</p>
             </div>
         </div>
     </section>
 
     <!-- قسم التواصل المباشر -->
     <section id="contact">
-        <div class="contact-section">
+        <div class="contact-section" data-aos="zoom-in">
             <h2>نحن هنا للاستماع إليك ومساعدتك</h2>
             <p>تواصل معنا بأي وقت وسيتم الرد عليك في سرية تامة ومطلقة.</p>
             <div class="contact-methods">
                 <div class="contact-method">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <strong>رقم الهاتف والواتساب</strong>
-                    <a href="https://wa.me/+201211117075" target="_blank" style="color:var(--white);">+20 12 1111 70 75</a>
+                    <a href="https://wa.me/+201211117075" target="_blank" dir="ltr">+20 12 1111 70 75</a>
                 </div>
                 <div class="contact-method">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     <strong>البريد الإلكتروني</strong>
-                    <a href="mailto:elhoreya99@gmail.com" style="color:var(--white);">elhoreya99@gmail.com</a>
+                    <a href="mailto:elhoreya99@gmail.com">elhoreya99@gmail.com</a>
+                </div>
+                <div class="contact-method">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    <strong>منصات التواصل</strong>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" title="فيسبوك">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/center.el7oria.drug.addiction" target="_blank" title="انستجرام">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -384,5 +406,14 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
     </a>
 
+    <!-- السكريبتات -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+    </script>
 </body>
 </html>
