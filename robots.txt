@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://horryeafreedom.center/sitemap.xml
