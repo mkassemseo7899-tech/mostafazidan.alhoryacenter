@@ -9,102 +9,63 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* الألوان والمتغيرات الأساسية */
         :root {
-            --navy: #0a2540;
-            --blue: #0d6efd;
-            --sky: #1a9fd4;
-            --accent: #11999e;
-            --light: #f8fbff;
-            --white: #ffffff;
-            --gray: #6c757d;
-            --shadow: 0 10px 30px rgba(10, 37, 64, 0.08);
-            --transition: all 0.3s ease-in-out;
-            /* ألوان السوشيال ميديا الأصلية */
-            --fb-color: #1877F2;
-            --ig-gradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-            --wa-color: #25D366;
-            --mail-color: #EA4335;
+            --navy: #0a2540; --blue: #0d6efd; --sky: #1a9fd4; --accent: #11999e;
+            --light: #f8fbff; --white: #ffffff; --gray: #6c757d;
+            --shadow: 0 10px 30px rgba(10, 37, 64, 0.08); --transition: all 0.3s ease-in-out;
+            --fb-color: #1877F2; --ig-gradient: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+            --wa-color: #25D366; --mail-color: #EA4335;
         }
 
-        /* الإعدادات العامة */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { font-family: 'Cairo', sans-serif; background: var(--white); color: var(--navy); overflow-x: hidden; width: 100%; line-height: 1.7; scroll-behavior: smooth; }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; transition: var(--transition); }
 
-        /* شريط التنقل (Navbar) */
+        /* شريط التنقل */
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 10px 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.05); height: 80px; }
         .nav-logo img { height: 60px; border-radius: 8px; object-fit: contain; }
         .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center; }
         .nav-links a { color: var(--navy); font-weight: 700; font-size: 15px; transition: var(--transition); }
         .nav-links a:hover { color: var(--sky); }
-        
         .menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 6px; z-index: 1001; }
         .menu-toggle span { display: block; width: 30px; height: 4px; background-color: var(--navy); border-radius: 2px; transition: var(--transition); }
 
-        /* أزرار 3D العامة */
+        /* أزرار 3D */
         .nav-cta { background: var(--blue); color: var(--white); padding: 10px 25px; border-radius: 8px; font-weight: 700; font-size: 15px; box-shadow: 0 5px 0 #0a58ca, 0 10px 15px rgba(13,110,253,0.3); position: relative; display: inline-block; }
         .nav-cta:hover { background: #0b5ed7; transform: translateY(-2px); box-shadow: 0 7px 0 #0a58ca, 0 12px 20px rgba(13,110,253,0.4); color: white;}
         .nav-cta:active { transform: translateY(3px); box-shadow: 0 2px 0 #0a58ca, 0 4px 10px rgba(13,110,253,0.3); }
-
         .btn-primary { background: var(--sky); color: var(--white); padding: 15px 35px; border-radius: 10px; font-weight: 700; font-size: 16px; text-align: center; box-shadow: 0 6px 0 #1279a1, 0 10px 20px rgba(26,159,212,0.3); border: none; position: relative; display: inline-block; }
         .btn-primary:hover { background: #1ab0eb; transform: translateY(-2px); box-shadow: 0 8px 0 #1279a1, 0 15px 25px rgba(26,159,212,0.4); color: white;}
         .btn-primary:active { transform: translateY(4px); box-shadow: 0 2px 0 #1279a1, 0 4px 10px rgba(26,159,212,0.3); }
-
         .btn-outline { border: 2px solid var(--white); color: var(--white); padding: 15px 35px; border-radius: 10px; font-weight: 700; font-size: 16px; direction: ltr; text-align: center; background: transparent; box-shadow: 0 5px 0 rgba(255,255,255,0.4); position: relative; display: inline-block; }
         .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); box-shadow: 0 7px 0 rgba(255,255,255,0.5); border-color: var(--white); color: white; }
         .btn-outline:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(255,255,255,0.4); }
 
-        /* ======== شريط الأخبار المتحرك ======== */
-        .ticker-wrapper { 
-            width: 100%; 
-            overflow: hidden; 
-            background-color: var(--blue); 
-            color: var(--white); 
-            padding: 15px 0; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            margin-top: 80px; 
-            position: relative;
-            z-index: 99;
-        }
-        .ticker-track { 
-            display: inline-flex; 
-            white-space: nowrap; 
-            animation: scrollText 30s linear infinite reverse; 
-        }
+        /* شريط الأخبار المتحرك */
+        .ticker-wrapper { width: 100%; overflow: hidden; background-color: var(--blue); color: var(--white); padding: 15px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 80px; position: relative; z-index: 99; }
+        .ticker-track { display: inline-flex; white-space: nowrap; animation: scrollText 30s linear infinite reverse; }
         .ticker-track:hover { animation-play-state: paused; cursor: pointer; }
         .ticker-item { display: inline-flex; align-items: center; font-size: 19px; font-weight: 700; padding-right: 20px; }
         .ticker-item span { margin: 0 20px; color: var(--navy); font-size: 14px; opacity: 0.6; }
         @keyframes scrollText { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        /* القسم الرئيسي (Hero) */
+        /* القسم الرئيسي */
         .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 140px); background: var(--navy); padding-top: 40px; padding-bottom: 40px; align-items: center; gap: 30px; }
         .hero-text-box { padding: 20px 50px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        
         @keyframes floatLogo { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
-        
         .hero-logo { width: 350px; max-width: 90%; margin-bottom: 25px; object-fit: contain; background-color: var(--white); padding: 20px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: floatLogo 4s ease-in-out infinite; }
-        
         .hero h1 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; color: var(--white); line-height: 1.4; margin-bottom: 20px; }
         .hero h1 span { color: var(--sky); }
         .hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 10px;}
         .hero-image-box { height: 100%; width: 100%; display: flex; align-items: center; justify-content: center; padding: 20px;}
         .hero-image-box img { width: 100%; height: 90%; max-height: 500px; object-fit: cover; border-radius: 20px; box-shadow: var(--shadow); }
 
-        /* التصميم المشترك للأقسام */
+        /* تصميم الأقسام المشترك */
         section { padding: 80px 5%; overflow: hidden; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-tag { display: inline-block; background: var(--light); color: var(--sky); padding: 8px 20px; border-radius: 30px; font-size: 14px; font-weight: 700; margin-bottom: 15px; }
-        
-        /* عناوين الأقسام الـ 3D الملونة */
-        section .section-header h2 { 
-            font-size: clamp(32px, 5vw, 48px); 
-            font-weight: 900; 
-            margin-bottom: 15px; 
-            text-shadow: 1px 1px 0px #cbd5e1, 2px 2px 0px #94a3b8, 3px 3px 0px #64748b, 4px 4px 5px rgba(0,0,0,0.2); 
-            letter-spacing: 1px;
-        }
+        section .section-header h2 { font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 15px; text-shadow: 1px 1px 0px #cbd5e1, 2px 2px 0px #94a3b8, 3px 3px 0px #64748b, 4px 4px 5px rgba(0,0,0,0.2); letter-spacing: 1px; }
         #about .section-header h2 { color: var(--navy); }
         #services .section-header h2 { color: #0284c7; }
         #facilities .section-header h2 { color: var(--accent); }
@@ -112,7 +73,6 @@
         #community .section-header h2 { color: #16a34a; }
         #pricing .section-header h2 { color: #7c3aed; }
         #contact .section-header h2 { color: #e11d48; }
-
         .section-header p { color: var(--gray); font-size: 18px; max-width: 700px; margin: auto; font-weight: 600; }
 
         /* الشبكات والكروت */
@@ -128,7 +88,6 @@
         .service-card { background: var(--white); border-radius: 20px; padding: 40px 30px; box-shadow: var(--shadow); border: 1px solid rgba(26,159,212,0.05); text-align: center; transition: var(--transition); }
         .service-card:hover { transform: translateY(-10px); border-color: var(--sky); }
         .service-icon { width: 80px; height: 80px; border-radius: 20px; background: var(--light); color: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 35px; margin: 0 auto 20px; }
-
         .gallery-card { position: relative; overflow: hidden; border-radius: 20px; aspect-ratio: 4/3; box-shadow: var(--shadow); cursor: pointer; }
         .gallery-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .gallery-card:hover img { transform: scale(1.1); }
@@ -137,7 +96,7 @@
         .gallery-overlay h3 { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 5px; }
         .gallery-overlay p { color: rgba(255,255,255,0.9); font-size: 14px; }
 
-        /* ======== قسم خطط الأسعار (تم ضبط التوسيط) ======== */
+        /* قسم خطط الأسعار */
         .pricing-phase { max-width: 1200px; margin: 0 auto 60px; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow); border-top: 5px solid var(--sky); }
         .pricing-phase h3 { font-size: 28px; color: var(--navy); margin-bottom: 15px; font-weight: 900; text-align: center;}
         .pricing-phase > p { text-align: center; color: var(--gray); margin-bottom: 30px; font-weight: 600; font-size: 16px; }
@@ -149,20 +108,7 @@
         .price-box .amount { font-size: 26px; font-weight: 900; color: var(--sky); margin-bottom: 5px; direction: ltr; }
         .price-box .period { font-size: 14px; color: var(--gray); font-weight: 600; }
         
-        /* عناوين الباقات الموسطنة */
-        .pricing-category-title { 
-            display: block; 
-            width: fit-content; 
-            margin: 40px auto 20px auto; 
-            text-align: center; 
-            font-size: 22px; 
-            color: var(--white); 
-            background: var(--navy); 
-            padding: 10px 35px; 
-            border-radius: 10px; 
-            font-weight: 800;
-        }
-        
+        .pricing-category-title { display: block; width: fit-content; margin: 40px auto 20px auto; text-align: center; font-size: 22px; color: var(--white); background: var(--navy); padding: 10px 35px; border-radius: 10px; font-weight: 800; }
         .medical-test-alert { background: rgba(234, 88, 12, 0.1); color: #ea580c; padding: 20px; border-radius: 10px; text-align: center; font-weight: 700; margin-top: 20px; border: 2px dashed #ea580c; }
 
         /* المنهجية */
@@ -172,10 +118,9 @@
         .approach-card:hover { background: rgba(26,159,212,0.2); transform: translateY(-5px); border-color: var(--sky); }
         .approach-num { font-size: 55px; font-weight: 900; color: var(--sky); opacity: 0.4; margin-bottom: 10px; line-height: 1; }
 
-        /* قسم التواصل والأيقونات الـ 3D الديناميكية */
+        /* قسم التواصل */
         .contact-wrapper { max-width: 1000px; margin: auto; background: var(--light); border-radius: 24px; box-shadow: var(--shadow); overflow: hidden; padding: 60px 40px; text-align: center; border: 2px solid rgba(0,0,0,0.05); }
         .contact-wrapper p { font-size: 18px; margin-bottom: 40px; color: var(--gray); font-weight: 600; }
-        
         @keyframes dynamicFloat { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
         
         .social-btn-3d { display: inline-flex; align-items: center; justify-content: center; width: 75px; height: 75px; border-radius: 50%; color: var(--white); margin: 0 15px; text-decoration: none; transition: all 0.2s ease; animation: dynamicFloat 3s ease-in-out infinite; }
@@ -191,7 +136,7 @@
         .btn-mail { background-color: var(--mail-color); box-shadow: 0 6px 0 #b33328, 0 10px 15px rgba(234,67,53,0.4); animation-delay: 1.5s;}
         .btn-mail:hover { background-color: #f54a3b; box-shadow: 0 8px 0 #b33328, 0 15px 20px rgba(234,67,53,0.5); transform: translateY(-5px); animation: none;}
 
-        /* ======== الفوتر والـ Powered By ======== */
+        /* الفوتر */
         footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 20px; font-size: 15px; }
         .powered-by-box { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 25px; direction: ltr; }
         .powered-by-box span { color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
@@ -202,6 +147,7 @@
         .whatsapp-float:hover { filter: brightness(1.1); transform: translateY(-5px); box-shadow: 0 8px 0 #1da851, 0 15px 25px rgba(37,211,102,0.5); animation: none;}
         .whatsapp-float:active { transform: translateY(4px); box-shadow: 0 2px 0 #1da851; }
 
+        /* التجاوب مع الموبايل */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-logo img { height: 45px; }
@@ -235,13 +181,11 @@
 
 <nav>
     <div class="nav-logo">
-        <img src="images/logo.png" alt="شعار مركز الحرية لعلاج الإدمان" title="مركز الحرية">
+        <img src="images/logo.png" alt="شعار مركز الحرية" title="مركز الحرية">
     </div>
     
     <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
     </div>
 
     <ul class="nav-links" id="nav-links">
@@ -250,7 +194,7 @@
         <li><a href="#facilities">المرافق</a></li>
         <li><a href="#activities">الأنشطة</a></li>
         <li><a href="#pricing">أسعار برامجنا</a></li>
-        <li><a href="https://freedomcenter-blog.blogspot.com/" target="_blank" style="color: var(--sky);">المدونة الطبية</a></li>
+        <li><a href="https://blog.horryeafreedom.center/" target="_blank" style="color: var(--sky);">المدونة الطبية</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
     </ul>
     
@@ -260,29 +204,17 @@
 <div class="ticker-wrapper" dir="ltr">
     <div class="ticker-track">
         <div class="ticker-item" dir="rtl">
-            مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> 
-            أعلى نسب تعافي في مصر <span>✦</span> 
-            سحب السموم بدون ألم <span>✦</span> 
-            تأهيل نفسي وسلوكي <span>✦</span> 
-            رعاية لاحقة ومتابعة مستمرة <span>✦</span> 
-            إقامة فندقية متميزة <span>✦</span> 
-            سرية تامة واحترافية <span>✦</span>
+            مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> أعلى نسب تعافي في مصر <span>✦</span> سحب السموم بدون ألم <span>✦</span> تأهيل نفسي وسلوكي <span>✦</span> رعاية لاحقة ومتابعة مستمرة <span>✦</span> إقامة فندقية متميزة <span>✦</span> سرية تامة واحترافية <span>✦</span>
         </div>
         <div class="ticker-item" dir="rtl">
-            مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> 
-            أعلى نسب تعافي في مصر <span>✦</span> 
-            سحب السموم بدون ألم <span>✦</span> 
-            تأهيل نفسي وسلوكي <span>✦</span> 
-            رعاية لاحقة ومتابعة مستمرة <span>✦</span> 
-            إقامة فندقية متميزة <span>✦</span> 
-            سرية تامة واحترافية <span>✦</span>
+            مركز الحرية لعلاج الإدمان والطب النفسي <span>✦</span> أعلى نسب تعافي في مصر <span>✦</span> سحب السموم بدون ألم <span>✦</span> تأهيل نفسي وسلوكي <span>✦</span> رعاية لاحقة ومتابعة مستمرة <span>✦</span> إقامة فندقية متميزة <span>✦</span> سرية تامة واحترافية <span>✦</span>
         </div>
     </div>
 </div>
 
 <section class="hero">
     <div class="hero-text-box" data-aos="fade-left">
-        <img src="images/logo.png" alt="شعار مؤسسة الحرية" class="hero-logo" title="مؤسسة الحرية">
+        <img src="images/logo.png" alt="مؤسسة الحرية" class="hero-logo">
         <h1>مركز <span>الحرية</span> لعلاج الإدمان</h1>
         <div class="hero-btns">
             <a href="#contact" class="btn-primary">ابدأ رحلة التعافي الآن</a>
@@ -290,7 +222,7 @@
         </div>
     </div>
     <div class="hero-image-box" data-aos="fade-right">
-        <img src="images/hero-bg.jpg" alt="أكبر نسبة تعافي من الإدمان في مصر" title="أعلى نسب التعافي بمركز الحرية">
+        <img src="images/hero-bg.jpg" alt="أعلى نسب التعافي بمركز الحرية">
     </div>
 </section>
 
@@ -447,6 +379,19 @@
     </div>
 </section>
 
+<section class="approach-section">
+    <div class="section-header" data-aos="fade-up">
+        <span class="section-tag" style="background: rgba(255,255,255,0.1); color:#fff;">خطوات التعافي</span>
+        <h2>طريقك المدروس نحو الحرية</h2>
+    </div>
+    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="approach-card" data-aos="fade-up"><div class="approach-num">01</div><h3>التقييم الشامل</h3></div>
+        <div class="approach-card" data-aos="fade-up" data-aos-delay="100"><div class="approach-num">02</div><h3>سحب السموم</h3></div>
+        <div class="approach-card" data-aos="fade-up" data-aos-delay="200"><div class="approach-num">03</div><h3>التأهيل السلوكي</h3></div>
+        <div class="approach-card" data-aos="fade-up" data-aos-delay="300"><div class="approach-num">04</div><h3>الرعاية اللاحقة</h3></div>
+    </div>
+</section>
+
 <section id="contact" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">خدمة العملاء</span>
@@ -462,14 +407,12 @@
             <a href="https://www.instagram.com/center.el7oria.drug.addiction" target="_blank" class="social-btn-3d btn-ig"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
             <a href="mailto:elhoreya99@gmail.com" class="social-btn-3d btn-mail"><svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a>
         </div>
-        
         <p style="margin-top: 30px; font-weight: 800; color: var(--navy); font-size: 26px; direction: ltr;">+20 12 1111 70 75</p>
     </div>
 </section>
 
 <footer>
     <p>جميع الحقوق محفوظة &copy; 2026 <strong>مركز الحرية لعلاج الإدمان بوادي النطرون</strong>.</p>
-    
     <div class="powered-by-box">
         <span>Powered by</span>
         <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" title="Service Hub">
@@ -487,16 +430,8 @@
   AOS.init({ duration: 800, once: true, offset: 100 });
   const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.getElementById('nav-links');
-  menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-  });
-  document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          menuToggle.classList.remove('active');
-      });
-  });
+  menuToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); menuToggle.classList.toggle('active'); });
+  document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); menuToggle.classList.remove('active'); }); });
 </script>
 </body>
 </html>
