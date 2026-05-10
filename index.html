@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KE8K7PZ1G6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-KE8K7PZ1G6');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="مركز الحرية لعلاج الإدمان - أكبر نسبة تعافي في مصر. رعاية طبية وتأهيل نفسي في بيئة علاجية راقية بوادي النطرون.">
     <title>مركز الحرية لعلاج الإدمان | وادي النطرون</title>
-    <!-- استدعاء خط كايرو -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <!-- مكتبة الحركات -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -48,7 +36,7 @@
         /* شريط التنقل (Navbar) */
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); padding: 10px 5%; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 15px rgba(0,0,0,0.05); height: 80px; }
         .nav-logo img { height: 60px; border-radius: 8px; object-fit: contain; }
-        .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+        .nav-links { display: flex; gap: 25px; list-style: none; margin: 0; padding: 0; align-items: center; }
         .nav-links a { color: var(--navy); font-weight: 700; font-size: 15px; transition: var(--transition); }
         .nav-links a:hover { color: var(--sky); }
         
@@ -68,7 +56,7 @@
         .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); box-shadow: 0 7px 0 rgba(255,255,255,0.5); border-color: var(--white); color: white; }
         .btn-outline:active { transform: translateY(3px); box-shadow: 0 2px 0 rgba(255,255,255,0.4); }
 
-        /* شريط الأخبار المتحرك */
+        /* ======== شريط الأخبار المتحرك ======== */
         .ticker-wrapper { 
             width: 100%; 
             overflow: hidden; 
@@ -149,7 +137,7 @@
         .gallery-overlay h3 { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 5px; }
         .gallery-overlay p { color: rgba(255,255,255,0.9); font-size: 14px; }
 
-        /* ======== قسم خطط الأسعار (تم حل التوسيط) ======== */
+        /* ======== قسم خطط الأسعار (تم ضبط التوسيط) ======== */
         .pricing-phase { max-width: 1200px; margin: 0 auto 60px; background: var(--white); border-radius: 24px; padding: 40px; box-shadow: var(--shadow); border-top: 5px solid var(--sky); }
         .pricing-phase h3 { font-size: 28px; color: var(--navy); margin-bottom: 15px; font-weight: 900; text-align: center;}
         .pricing-phase > p { text-align: center; color: var(--gray); margin-bottom: 30px; font-weight: 600; font-size: 16px; }
@@ -161,7 +149,7 @@
         .price-box .amount { font-size: 26px; font-weight: 900; color: var(--sky); margin-bottom: 5px; direction: ltr; }
         .price-box .period { font-size: 14px; color: var(--gray); font-weight: 600; }
         
-        /* التعديل الجذري لعناوين الباقات عشان تتوسطن في الشاشة */
+        /* عناوين الباقات الموسطنة */
         .pricing-category-title { 
             display: block; 
             width: fit-content; 
@@ -170,7 +158,7 @@
             font-size: 22px; 
             color: var(--white); 
             background: var(--navy); 
-            padding: 10px 30px; 
+            padding: 10px 35px; 
             border-radius: 10px; 
             font-weight: 800;
         }
@@ -196,70 +184,37 @@
         
         .btn-wa { background-color: var(--wa-color); box-shadow: 0 6px 0 #1da851, 0 10px 15px rgba(37,211,102,0.4); }
         .btn-wa:hover { background-color: #2ce06d; box-shadow: 0 8px 0 #1da851, 0 15px 20px rgba(37,211,102,0.5); transform: translateY(-5px); animation: none;}
-        
         .btn-fb { background-color: var(--fb-color); box-shadow: 0 6px 0 #105cb8, 0 10px 15px rgba(24,119,242,0.4); animation-delay: 0.5s;}
         .btn-fb:hover { background-color: #1a81ff; box-shadow: 0 8px 0 #105cb8, 0 15px 20px rgba(24,119,242,0.5); transform: translateY(-5px); animation: none;}
-        
         .btn-ig { background: var(--ig-gradient); box-shadow: 0 6px 0 #a91b68, 0 10px 15px rgba(225,48,108,0.4); animation-delay: 1s;}
         .btn-ig:hover { filter: brightness(1.1); box-shadow: 0 8px 0 #a91b68, 0 15px 20px rgba(225,48,108,0.5); transform: translateY(-5px); animation: none;}
-
         .btn-mail { background-color: var(--mail-color); box-shadow: 0 6px 0 #b33328, 0 10px 15px rgba(234,67,53,0.4); animation-delay: 1.5s;}
         .btn-mail:hover { background-color: #f54a3b; box-shadow: 0 8px 0 #b33328, 0 15px 20px rgba(234,67,53,0.5); transform: translateY(-5px); animation: none;}
 
-        /* ======== الفوتر وتصميم الـ Powered By ======== */
+        /* ======== الفوتر والـ Powered By ======== */
         footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 40px 20px; font-size: 15px; }
+        .powered-by-box { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 25px; direction: ltr; }
+        .powered-by-box span { color: rgba(255,255,255,0.7); font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+        .powered-by-box img { height: 35px; background: #ffffff; padding: 5px 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: var(--transition); }
+        .powered-by-box img:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
         
-        /* تصميم حقوق الملكية واللوجو */
-        .powered-by-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 25px;
-            direction: ltr; /* مهم جداً لعكس الاتجاه لتكون Powered by على اليسار */
-        }
-        .powered-by-box span {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .powered-by-box img {
-            height: 35px;
-            background: #ffffff;
-            padding: 5px 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: var(--transition);
-        }
-        .powered-by-box img:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-        }
-        
-        /* زر الواتساب العائم */
         .whatsapp-float { position: fixed; bottom: 30px; left: 30px; background: var(--wa-color); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 6px 0 #1da851, 0 10px 20px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.2s, box-shadow 0.2s; animation: dynamicFloat 2s ease-in-out infinite; }
         .whatsapp-float:hover { filter: brightness(1.1); transform: translateY(-5px); box-shadow: 0 8px 0 #1da851, 0 15px 25px rgba(37,211,102,0.5); animation: none;}
         .whatsapp-float:active { transform: translateY(4px); box-shadow: 0 2px 0 #1da851; }
 
-        /* التجاوب مع الموبايل */
         @media (max-width: 768px) {
             nav { padding: 15px 20px; }
             .nav-logo img { height: 45px; }
             .menu-toggle { display: flex; }
-            
             .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: var(--white); flex-direction: column; align-items: flex-start; padding: 80px 20px 30px; box-shadow: -5px 0 20px rgba(0,0,0,0.15); transition: right 0.4s ease-in-out; }
             .nav-links.active { right: 0; } 
             .nav-links li { width: 100%; border-bottom: 1px solid rgba(0,0,0,0.05); }
             .nav-links a { display: block; padding: 15px 10px; font-size: 18px; color: var(--navy); border: none !important; background: none !important; box-shadow: none !important; text-align: right; width: 100%; }
             .nav-cta { display: none; } 
-            
             .menu-toggle.active span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
             .menu-toggle.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
-
             .ticker-wrapper { margin-top: 75px; } 
-
             .hero { grid-template-columns: 1fr; padding-top: 40px; gap: 10px; min-height: auto; }
             .hero-text-box { padding: 20px; }
             .hero-logo { width: 280px; padding: 15px; }
@@ -278,7 +233,6 @@
 </head>
 <body>
 
-<!-- شريط التنقل -->
 <nav>
     <div class="nav-logo">
         <img src="images/logo.png" alt="شعار مركز الحرية لعلاج الإدمان" title="مركز الحرية">
@@ -296,13 +250,13 @@
         <li><a href="#facilities">المرافق</a></li>
         <li><a href="#activities">الأنشطة</a></li>
         <li><a href="#pricing">أسعار برامجنا</a></li>
+        <li><a href="https://freedomcenter-blog.blogspot.com/" target="_blank" style="color: var(--sky);">المدونة الطبية</a></li>
         <li><a href="#contact">تواصل معنا</a></li>
     </ul>
     
     <a href="https://wa.me/+201211117075" class="nav-cta" target="_blank" rel="noopener noreferrer">احجز استشارتك</a>
 </nav>
 
-<!-- شريط الأخبار المتحرك -->
 <div class="ticker-wrapper" dir="ltr">
     <div class="ticker-track">
         <div class="ticker-item" dir="rtl">
@@ -326,7 +280,6 @@
     </div>
 </div>
 
-<!-- القسم الرئيسي -->
 <section class="hero">
     <div class="hero-text-box" data-aos="fade-left">
         <img src="images/logo.png" alt="شعار مؤسسة الحرية" class="hero-logo" title="مؤسسة الحرية">
@@ -341,7 +294,6 @@
     </div>
 </section>
 
-<!-- قسم عن المركز -->
 <section id="about" class="about-section">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">ملاذك الآمن</span>
@@ -365,7 +317,6 @@
     </div>
 </section>
 
-<!-- قسم الخدمات -->
 <section id="services" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">برامج متخصصة</span>
@@ -391,7 +342,6 @@
     </div>
 </section>
 
-<!-- قسم المرافق -->
 <section id="facilities">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">بنية تحتية متكاملة</span>
@@ -405,7 +355,6 @@
     </div>
 </section>
 
-<!-- قسم الأنشطة -->
 <section id="activities" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">تجديد الطاقة</span>
@@ -419,7 +368,6 @@
     </div>
 </section>
 
-<!-- قسم المجتمع -->
 <section id="community">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">روابط تدوم</span>
@@ -433,7 +381,6 @@
     </div>
 </section>
 
-<!-- ======== قسم خطط الأسعار ======== -->
 <section id="pricing" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">باقات العلاج</span>
@@ -441,85 +388,57 @@
         <p>أسعار شفافة وباقات تناسب كافة الاحتياجات. ينقسم العلاج إلى مرحلتين أساسيتين.</p>
     </div>
 
-    <!-- المرحلة الأولى -->
     <div class="pricing-phase" data-aos="fade-up">
         <h3>المرحلة الأولى: سحب السموم والتشخيص</h3>
         <p>فترة العلاج الطبي والتشخيص (من أسبوع إلى 10 أيام للدخول الإرادي - أو 15 يوم للإلزامي).</p>
         
         <div class="price-grid-inner">
-            <div class="price-box">
-                <h4>الإقامة الاقتصادية</h4>
-                <div class="amount">450 ج</div>
-                <div class="period">لليوم الواحد</div>
-            </div>
-            <div class="price-box">
-                <h4>الغرف المميزة (6 أفراد مكيفة)</h4>
-                <div class="amount">550 ج</div>
-                <div class="period">لليوم الواحد</div>
-            </div>
-            <div class="price-box">
-                <h4>غرفة ثلاثية (مكيفة + شاشة وحمام)</h4>
-                <div class="amount">700 ج</div>
-                <div class="period">لليوم الواحد</div>
-            </div>
-            <div class="price-box">
-                <h4>غرفة ثنائية (مكيفة + شاشة وثلاجة)</h4>
-                <div class="amount">1200 ج</div>
-                <div class="period">لليوم الواحد</div>
-            </div>
-            <div class="price-box">
-                <h4>غرفة فردية (مكيفة + شاشة وثلاجة)</h4>
-                <div class="amount">1700 ج</div>
-                <div class="period">لليوم الواحد</div>
-            </div>
+            <div class="price-box"><h4>الإقامة الاقتصادية</h4><div class="amount">450 ج</div><div class="period">لليوم الواحد</div></div>
+            <div class="price-box"><h4>الغرف المميزة (6 أفراد)</h4><div class="amount">550 ج</div><div class="period">لليوم الواحد</div></div>
+            <div class="price-box"><h4>غرفة ثلاثية (مكيفة)</h4><div class="amount">700 ج</div><div class="period">لليوم الواحد</div></div>
+            <div class="price-box"><h4>غرفة ثنائية (ثلاجة)</h4><div class="amount">1200 ج</div><div class="period">لليوم الواحد</div></div>
+            <div class="price-box"><h4>غرفة فردية (ثلاجة)</h4><div class="amount">1700 ج</div><div class="period">لليوم الواحد</div></div>
         </div>
         
         <div class="medical-test-alert">
             يُضاف 1000 ج (تدفع مرة واحدة عند الدخول) لعمل تحاليل طبية شاملة:<br>
             <span style="font-weight: 600; font-size: 15px; color: var(--navy);">صورة دم - وظائف كبد - وظائف كلى - سكر تراكمي - دهون الدم - تحليل مخدرات - رسم قلب.</span>
-            <br><span style="font-size: 14px; color: var(--gray);">* مصاريف الإقامة غير شاملة المصاريف الشخصية.</span>
         </div>
     </div>
 
-    <!-- المرحلة الثانية -->
     <div class="pricing-phase" data-aos="fade-up">
         <h3>المرحلة الثانية: إعادة التأهيل النفسي والسلوكي</h3>
-        <p>أسعار الإقامة الشهرية في قطاع وادي النطرون، مقسمة حسب الفئات والقطاعات:</p>
         
         <div class="pricing-category-title">الدرجة الاقتصادية (الفرص)</div>
         <div class="price-grid-inner">
-            <div class="price-box">
-                <h4>سعر الغرفة</h4>
-                <div class="amount">7000 ج</div>
-                <div class="period">شهرياً</div>
-            </div>
+            <div class="price-box"><h4>سعر الغرفة</h4><div class="amount">7000 ج</div><div class="period">شهرياً</div></div>
         </div>
 
         <div class="pricing-category-title">القطاع المميز (NA مفتوح)</div>
         <div class="price-grid-inner">
             <div class="price-box"><h4>غرفة عادية</h4><div class="amount">10,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة ثلاثية (Triple)</h4><div class="amount">15,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة ثنائية (شاشة وثلاجة)</h4><div class="amount">20,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة فردية (شاشة وثلاجة)</h4><div class="amount">35,000 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة ثلاثية</h4><div class="amount">15,000 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة ثنائية</h4><div class="amount">20,000 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة فردية</h4><div class="amount">35,000 ج</div><div class="period">شهرياً</div></div>
         </div>
 
         <div class="pricing-category-title">برنامج إعداد NA</div>
         <div class="price-grid-inner">
             <div class="price-box"><h4>غرفة 6 أسرّة</h4><div class="amount">10,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة 5 أسرّة مميزة (شاشة وثلاجة)</h4><div class="amount">12,500 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة 3 أسرّة مميزة (بشاشة)</h4><div class="amount">15,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة ثنائية مميزة (شاشة وثلاجة)</h4><div class="amount">20,000 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة 5 أسرّة مميزة</h4><div class="amount">12,500 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة 3 أسرّة مميزة</h4><div class="amount">15,000 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة ثنائية مميزة</h4><div class="amount">20,000 ج</div><div class="period">شهرياً</div></div>
         </div>
 
-        <div class="pricing-category-title">القطاع الفاخر (VIP) و الأجانب</div>
+        <div class="pricing-category-title">القطاع الفاخر و الأجانب</div>
         <div class="price-grid-inner">
             <div class="price-box"><h4>غرفة رباعية فاخرة</h4><div class="amount">22,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box"><h4>غرفة ثنائية عادية (دبل)</h4><div class="amount">30,000 ج</div><div class="period">شهرياً</div></div>
+            <div class="price-box"><h4>غرفة ثنائية عادية</h4><div class="amount">30,000 ج</div><div class="period">شهرياً</div></div>
             <div class="price-box"><h4>غرفة ثنائية فندقية</h4><div class="amount">40,000 ج</div><div class="period">شهرياً</div></div>
             <div class="price-box"><h4>غرفة فردية عادية</h4><div class="amount">50,000 ج</div><div class="period">شهرياً</div></div>
             <div class="price-box"><h4>غرفة فردية فندقية</h4><div class="amount">70,000 ج</div><div class="period">شهرياً</div></div>
-            <div class="price-box" style="border: 2px solid #10b981;"><h4>غرفة ثنائية للأجانب</h4><div class="amount" style="color: #10b981;">$1500</div><div class="period">شهرياً</div></div>
-            <div class="price-box" style="border: 2px solid #10b981;"><h4>غرفة فردية للأجانب</h4><div class="amount" style="color: #10b981;">$3000</div><div class="period">شهرياً</div></div>
+            <div class="price-box" style="border: 2px solid #10b981;"><h4>ثنائية للأجانب</h4><div class="amount" style="color: #10b981;">$1500</div><div class="period">شهرياً</div></div>
+            <div class="price-box" style="border: 2px solid #10b981;"><h4>فردية للأجانب</h4><div class="amount" style="color: #10b981;">$3000</div><div class="period">شهرياً</div></div>
         </div>
         
         <div style="text-align: center; margin-top: 40px;">
@@ -528,37 +447,6 @@
     </div>
 </section>
 
-<!-- قسم المنهجية (الخطوات) -->
-<section class="approach-section">
-    <div class="section-header" data-aos="fade-up">
-        <span class="section-tag" style="background: rgba(255,255,255,0.1); color:#fff;">خطوات التعافي</span>
-        <h2>طريقك المدروس نحو الحرية</h2>
-    </div>
-    <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-        <div class="approach-card" data-aos="fade-up">
-            <div class="approach-num">01</div>
-            <h3>التقييم الشامل</h3>
-            <p>فحص طبي ونفسي دقيق لتحديد البرنامج العلاجي الأنسب.</p>
-        </div>
-        <div class="approach-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="approach-num">02</div>
-            <h3>سحب السموم</h3>
-            <p>إزالة السموم بأمان تام باستخدام أحدث بروتوكولات الأدوية.</p>
-        </div>
-        <div class="approach-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="approach-num">03</div>
-            <h3>التأهيل السلوكي</h3>
-            <p>علاج الأسباب النفسية لضمان عدم العودة للإدمان.</p>
-        </div>
-        <div class="approach-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="approach-num">04</div>
-            <h3>الرعاية اللاحقة</h3>
-            <p>متابعة دورية لضمان استمرارية التعافي في الحياة اليومية.</p>
-        </div>
-    </div>
-</section>
-
-<!-- قسم التواصل وأيقونات 3D -->
 <section id="contact" style="background-color: var(--light);">
     <div class="section-header" data-aos="fade-up">
         <span class="section-tag">خدمة العملاء</span>
@@ -569,33 +457,19 @@
         <p>تواصل معنا بأي وقت وسيتم الرد عليك في سرية تامة.</p>
         
         <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 40px; padding: 20px 0;">
-            <!-- واتساب -->
-            <a href="https://wa.me/+201211117075" target="_blank" class="social-btn-3d btn-wa" title="راسلنا عبر واتساب">
-                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-            </a>
-            <!-- فيسبوك -->
-            <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" class="social-btn-3d btn-fb" title="صفحتنا على فيسبوك">
-                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <!-- انستجرام -->
-            <a href="https://www.instagram.com/center.el7oria.drug.addiction" target="_blank" class="social-btn-3d btn-ig" title="حسابنا على انستجرام">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-            <!-- ايميل -->
-            <a href="mailto:elhoreya99@gmail.com" class="social-btn-3d btn-mail" title="أرسل لنا بريداً إلكترونياً">
-                <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
-            </a>
+            <a href="https://wa.me/+201211117075" target="_blank" class="social-btn-3d btn-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" class="social-btn-3d btn-fb"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="https://www.instagram.com/center.el7oria.drug.addiction" target="_blank" class="social-btn-3d btn-ig"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="mailto:elhoreya99@gmail.com" class="social-btn-3d btn-mail"><svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg></a>
         </div>
         
         <p style="margin-top: 30px; font-weight: 800; color: var(--navy); font-size: 26px; direction: ltr;">+20 12 1111 70 75</p>
     </div>
 </section>
 
-<!-- الفوتر وقسم Powered by -->
 <footer>
     <p>جميع الحقوق محفوظة &copy; 2026 <strong>مركز الحرية لعلاج الإدمان بوادي النطرون</strong>.</p>
     
-    <!-- قسم Powered by -->
     <div class="powered-by-box">
         <span>Powered by</span>
         <a href="https://www.facebook.com/profile.php?id=100065591705520" target="_blank" title="Service Hub">
@@ -604,26 +478,19 @@
     </div>
 </footer>
 
-<!-- زر الواتساب العائم -->
 <a href="https://wa.me/+201211117075" class="whatsapp-float" target="_blank" title="تواصل معنا عبر واتساب">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
 </a>
 
-<!-- السكريبتات -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 800, once: true, offset: 100 });
-  
-  // سكريبت تشغيل القائمة الجانبية في الموبايل
   const menuToggle = document.getElementById('mobile-menu');
   const navLinks = document.getElementById('nav-links');
-  
   menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       menuToggle.classList.toggle('active');
   });
-
-  // إغلاق القائمة عند الضغط على أي رابط
   document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
           navLinks.classList.remove('active');
