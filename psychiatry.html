@@ -1,0 +1,279 @@
+ممتاز جداً! لقد قمت بإضافة الكود الأساسي لتتبع جوجل أدز (Google Tag) في المكان الصحيح داخل قسم `<head>`، كما قمت بتعديل جميع أزرار وروابط الاتصال والواتساب في الصفحة وإضافة كود تتبع الحدث `onclick` لكي يتم تسجيل النقرات كتحويلات (Conversions) في حسابك.
+
+إليك الكود المحدث بالكامل. قم بنسخه ولصقه في ملف `psychiatry.html` بدلاً من الكود القديم، ثم احفظ التعديلات وارفعها على GitHub:
+
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز الحرية للطب النفسي وتعديل السلوك | وادي النطرون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) - تمت إضافته هنا لتتبع إعلانات جوجل -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11365535372"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11365535372');
+    </script>
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body { background-color: #f8fafc; color: #1e293b; line-height: 1.7; text-align: right; }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand-icon {
+            width: 42px; height: 42px;
+            background: linear-gradient(135deg, #0f4c81, #0284c7);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 800; font-size: 20px;
+        }
+        .logo { font-size: 20px; font-weight: 800; color: #0f4c81; line-height: 1.2; }
+        .logo span { color: #10b981; font-size: 13px; display: block; font-weight: 600; }
+        
+        .header-call {
+            background: #0f4c81; color: #fff;
+            padding: 10px 20px; border-radius: 10px;
+            text-decoration: none; font-weight: 700; font-size: 14px;
+            transition: 0.3s;
+        }
+        .header-call:hover { background: #0284c7; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0f4c81 0%, #1e3a8a 100%);
+            color: #fff;
+            padding: 60px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-container { max-width: 950px; margin: 0 auto; }
+        .badge {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 20px; border-radius: 50px;
+            font-size: 14px; font-weight: 600;
+            display: inline-block; margin-bottom: 20px;
+        }
+        .hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 18px; line-height: 1.4; }
+        .hero p { font-size: 18px; max-width: 720px; margin: 0 auto 30px; color: #e2e8f0; }
+        
+        .hero-banner-img {
+            width: 100%; max-width: 820px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            margin: 35px auto 0;
+            display: block;
+            border: 4px solid rgba(255,255,255,0.2);
+        }
+
+        /* Buttons */
+        .cta-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-wa {
+            background-color: #25d366; color: #fff;
+            padding: 14px 30px; border-radius: 12px;
+            text-decoration: none; font-weight: 700; font-size: 17px;
+            display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+            transition: 0.3s;
+        }
+        .btn-wa:hover { background-color: #1ebe5d; transform: translateY(-2px); }
+        .btn-phone {
+            background-color: #fff; color: #0f4c81;
+            padding: 14px 30px; border-radius: 12px;
+            text-decoration: none; font-weight: 700; font-size: 17px;
+            transition: 0.3s;
+        }
+        .btn-phone:hover { background-color: #f1f5f9; }
+
+        /* Sections */
+        .section { padding: 65px 5%; max-width: 1100px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 45px; }
+        .section-header h2 { font-size: 28px; color: #0f4c81; font-weight: 800; margin-bottom: 10px; }
+        .section-header p { color: #64748b; font-size: 16px; }
+
+        /* Split Content with Illustration */
+        .split-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px; align-items: center;
+            background: #fff; padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        .split-box img {
+            width: 100%; border-radius: 18px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        /* Cards Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #fff; padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border-top: 4px solid #10b981;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-icon {
+            width: 50px; height: 50px;
+            background: #ecfdf5; color: #10b981;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 18px; font-size: 24px;
+        }
+        .card h3 { color: #0f4c81; margin-bottom: 10px; font-size: 20px; font-weight: 700; }
+        .card p { color: #475569; font-size: 15px; }
+
+        /* Floating WhatsApp Button */
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background-color: #25d366;
+            color: #ffffff;
+            padding: 12px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            transition: 0.3s;
+        }
+        .wa-float:hover {
+            background-color: #1ebe5d;
+            transform: scale(1.05);
+        }
+        .wa-svg {
+            width: 26px;
+            height: 26px;
+            fill: #ffffff;
+        }
+
+        footer {
+            background: #0f172a; color: #cbd5e1;
+            text-align: center; padding: 40px 5% 25px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 26px; }
+            .wa-float { bottom: 18px; left: 18px; padding: 10px 18px; font-size: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <div class="brand-icon">🕊️</div>
+            <div class="logo">
+                مركز الحرية
+                <span>للطب النفسي وتعديل السلوك</span>
+            </div>
+        </div>
+        <!-- تم إضافة كود التحويل لزر الاتصال في الهيدر -->
+        <a href="tel:+201211117075" onclick="gtag('event', 'conversion', {'send_to': 'AW-11365535372/rlJ2CPyAmdEcEIydwasq'});" class="header-call">01211117075 📞</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="badge">رعاية طبية ونفسية متكاملة بوادي النطرون • سرية تامة 100%</div>
+            <h1>استعد توازنك النفسي وابدأ حياة أكثر هدوءاً واستقراراً</h1>
+            <p>نقدم برامج متخصصة في الطب النفسي، الاستشارات الفردية، وتعديل السلوك في بيئة فندقية هادئة وسط الطبيعة بإشراف نخبة من الأطباء والاستشاريين.</p>
+            
+            <div class="cta-buttons">
+                <!-- تم إضافة كود التحويل لزر الواتساب في البانر -->
+                <a href="https://wa.me/201211117075?text=مرحباً، أرغب في حجز استشارة نفسية بسرية تامة" target="_blank" onclick="gtag('event', 'conversion', {'send_to': 'AW-11365535372/rlJ2CPyAmdEcEIydwasq'});" class="btn-wa">
+                    <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2 7.7 2 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.4c-2.4 0-4.8-.6-6.9-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.6 20.7 3 18.4 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13-5.8 12.9-13 12.9zm7.1-9.7c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9 1 .3 1.9.3 2.6.2.8-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>
+                    تواصل عبر واتساب الآن
+                </a>
+                <!-- تم إضافة كود التحويل لزر الاتصال في البانر -->
+                <a href="tel:+201211117075" onclick="gtag('event', 'conversion', {'send_to': 'AW-11365535372/rlJ2CPyAmdEcEIydwasq'});" class="btn-phone">اتصال مباشر للاستفسار</a>
+            </div>
+
+            <!-- ضع هنا رابط الصورة الأولى التي صممناها بعد رفعها على GitHub -->
+            <img src="banner.jpg" alt="مركز الحرية للطب النفسي وتعديل السلوك" class="hero-banner-img">
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="split-box">
+            <div>
+                <h2 style="color: #0f4c81; font-size: 26px; margin-bottom: 15px;">رعاية نفسية إنسانية في بيئة طبيعية هادئة</h2>
+                <p style="color: #475569; margin-bottom: 15px;">في <strong>مركز الحرية للطب النفسي وتعديل السلوك</strong> بوادي النطرون، نؤمن بأن التعافي النفسي يبدأ من الشعور بالأمان والاحتواء. نوفر مساحات خضراء واسعة وإقامة فندقية مريحة بعيداً عن ضغوط الحياة اليومية.</p>
+                <p style="color: #475569;">يعمل فريقنا الطبي والنفسي على مدار 24 ساعة لتقديم الدعم الفردي والجماعي بسرية مطلقة وخصوصية تامة.</p>
+            </div>
+            <div>
+                <!-- ضع هنا رابط الصورة الثانية التي صممناها بعد رفعها على GitHub -->
+                <img src="counseling.jpg" alt="جلسات الدعم النفسي وتعديل السلوك">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>برامجنا التخصصية</h2>
+            <p>خطط علاجية وتأهيلية متكاملة بإشراف نخبة من الأطباء والاستشاريين</p>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon">🧠</div>
+                <h3>الاستشارات والتقييم النفسي</h3>
+                <p>جلسات تقييم وتشخيص دقيقة لحالات القلق، والاكتئاب، والضغوط النفسية لوضع خطة علاجية مخصصة لكل حالة.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>برامج التأهيل وتعديل السلوك</h3>
+                <p>جلسات علاج معرفي سلوكي (CBT) تهدف إلى تغيير الأنماط السلبية، بناء مهارات التكيف، واستعادة التوازن.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>الرعاية اللاحقة والمتابعة</h3>
+                <p>متابعة مستمرة ودعم نفسي دوري بعد انتهاء البرنامج لضمان الاستقرار والاندماج الإيجابي في المجتمع.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 style="color: #fff; margin-bottom: 8px;">مركز الحرية للطب النفسي وتعديل السلوك</h3>
+        <p>وادي النطرون - مصر | هاتف وواتساب: 01211117075</p>
+        <p style="margin-top: 15px; font-size: 13px; color: #94a3b8;">جميع الحقوق محفوظة © 2026 مركز الحرية للطب النفسي وتعديل السلوك</p>
+    </footer>
+
+    <!-- زر أيقونة الواتساب العائم - تم إضافة كود التحويل له أيضاً -->
+    <a href="https://wa.me/201211117075?text=مرحباً، أرغب في الاستفسار عن برامج الطب النفسي وتعديل السلوك" target="_blank" onclick="gtag('event', 'conversion', {'send_to': 'AW-11365535372/rlJ2CPyAmdEcEIydwasq'});" class="wa-float" aria-label="تواصل عبر واتساب">
+        <svg class="wa-svg" viewBox="0 0 32 32"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 5 2 7.7 2 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.4c-2.4 0-4.8-.6-6.9-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5C3.6 20.7 3 18.4 3 16 3 8.8 8.8 3 16 3s13 5.8 13 13-5.8 12.9-13 12.9zm7.1-9.7c-.4-.2-2.3-1.1-2.7-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9 1 .3 1.9.3 2.6.2.8-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5z"/></svg>
+        <span>تواصل واتساب</span>
+    </a>
+
+</body>
+</html>
+
+```
